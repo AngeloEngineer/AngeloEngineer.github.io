@@ -1,7 +1,7 @@
 /* Service Worker du portfolio — PWA consultable hors-ligne.
    Stratégie : cache-first pour l'app shell, mise en cache à la volée des requêtes GET mêmes-origine. */
 
-const CACHE = 'portfolio-v2';
+const CACHE = 'portfolio-v3';
 const CORE = [
   './',
   './index.html',

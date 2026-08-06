@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio de Tchaa Mèwè Angelo BILAKE – Data Engineer & Data Analyst · Intelligence Artificielle & Big Data · ETL/ELT, entrepôts de données, BI" />
-  <meta name="theme-color" content="#0A1526" />
+  <meta name="theme-color" content="#0056D2" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" type="image/svg+xml" href="icon.svg" />
   <title>Portfolio | Data Engineer &amp; Data Analyst</title>
@@ -13,22 +13,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
     rel="stylesheet" />
-
-  <!-- Sup modern: GPU-ready, déjà préchauffé pour la suite -->
 
   <!-- CSS critique (au-dessus de la ligne de flottaison) : fond + loader -->
   <style>
-    :root {
-      --bg: #0a1526;
-      --gold: #f5c518;
+    body {
+      --bg: #D0E7FF;
     }
-    html { scroll-behavior: auto; }
+    *,
+    *::before,
+    *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: #eaf0f8;
+      background: #D0E7FF;
+      color: #1a1a1a;
       font-family: 'Inter', system-ui, sans-serif;
     }
     /* -- PRELOADER -- */
@@ -36,7 +35,7 @@
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: linear-gradient(160deg, #0a1526 0%, #0d1b30 100%);
+      background: #D0E7FF;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,29 +53,28 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       letter-spacing: 0.45em;
-      color: var(--gold);
+      color: #0056D2;
       margin-bottom: 1.2rem;
       opacity: 0;
       animation: loaderIn 0.9s 0.1s ease forwards;
     }
     .loader-name {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(1.1rem, 3vw, 1.6rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: #ffffff;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      font-weight: 700;
+      color: #0056D2;
       opacity: 0;
       animation: loaderIn 0.9s 0.3s ease forwards;
     }
     .loader-name em {
-      font-style: normal;
-      color: var(--gold);
+      font-style: italic;
+      color: #1a1a1a;
     }
     .loader-bar {
       margin: 1.6rem auto 0;
       width: min(260px, 60vw);
       height: 2px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(0, 86, 210, 0.12);
       border-radius: 2px;
       overflow: hidden;
       position: relative;
@@ -85,7 +83,7 @@
       position: absolute;
       inset: 0;
       width: 40%;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, #0056D2, transparent);
       animation: loaderSlide 1.1s ease-in-out infinite;
     }
     @keyframes loaderIn {
@@ -145,16 +143,18 @@
     </symbol>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88"/></symbol>
   </svg>
 
   <!-- ═══════════════ FOND WEBGL + HALO ═══════════════ -->
   <div id="webgl-glow" aria-hidden="true"></div>
   <canvas id="webgl" aria-hidden="true"></canvas>
 
-  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <!-- ═══════════════ NAVIGATION (pilule blanche flottante) ═══════════════ -->
   <nav id="navbar">
-    <div class="nav-inner">
+    <div class="nav-pill">
       <a href="#hero" class="nav-logo">
         <span class="logo-bracket">&lt;</span>
         <span class="logo-text">Tchaa Mèwè Angelo<span class="accent"> BILAKE</span></span>
@@ -167,7 +167,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="btn-nav">Me contacter</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -179,45 +179,84 @@
     <a href="#expertise" class="mobile-link">Expertise</a>
     <a href="#projects" class="mobile-link">Projets</a>
     <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="mobile-link mobile-cta">Me contacter</a>
   </div>
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section id="hero">
     <div class="container hero-inner">
-      <div class="hero-badge reveal">
-        <span class="badge-dot"></span>
-        Disponible pour des opportunités
-      </div>
-      <p class="hero-kicker reveal">// Data Engineer &amp; Data Analyst · IA &amp; Big Data</p>
       <h1 class="hero-title reveal">
-        Transformer la donnée<br />
-        en <span class="gold-grad">intelligence exploitable</span>.
+        <span class="serif-line">Tchaa Mèwè Angelo</span>
+        <span class="serif-line">BILAKE</span>
       </h1>
+      <p class="hero-kicker reveal">// Data Engineer · Data Analyst · IA &amp; Big Data</p>
+
+      <!-- Illustration au trait : boussole + chemins entrelacés -->
+      <div class="hero-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="art-lines" stroke="#0056D2" stroke-linecap="round">
+            <path class="art-main" d="M40 235 C 130 235, 120 175, 210 175 S 360 120, 450 70" />
+            <path class="art-dash" d="M 20 70 C 95 90, 160 70, 240 95 S 380 170, 455 160" />
+            <path class="art-dash" d="M 60 270 C 150 240, 240 280, 330 255 S 420 210, 455 235" />
+          </g>
+          <g class="art-pins" fill="#0056D2">
+            <circle cx="210" cy="175" r="6" />
+            <circle cx="450" cy="70" r="6" />
+            <circle cx="240" cy="60" r="6" />
+            <circle cx="330" cy="255" r="6" />
+          </g>
+          <g transform="translate(240 150)">
+            <g class="art-spin">
+              <circle r="58" stroke="#0056D2" stroke-width="1.6" />
+              <g stroke="#0056D2" stroke-width="2.4" stroke-linecap="round">
+                <line x1="0" y1="-58" x2="0" y2="-46" />
+                <line x1="0" y1="46" x2="0" y2="58" />
+                <line x1="-58" y1="0" x2="-46" y2="0" />
+                <line x1="46" y1="0" x2="58" y2="0" />
+              </g>
+              <g stroke="#0056D2" stroke-width="1.3" opacity="0.55">
+                <path d="M 41 -41 L 32 -32" /><path d="M 41 41 L 32 32" />
+                <path d="M -41 -41 L -32 -32" /><path d="M -41 41 L -32 32" />
+              </g>
+              <path class="art-needle" d="M 0 -30 L 9 0 L 0 30 L -9 0 Z" fill="#0056D2" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
       <p class="hero-sub reveal">
         Je conçois des <strong>pipelines ETL/ELT robustes</strong>, des entrepôts de données
-        décisionnels et des tableaux de bord qui transforment les données brutes en levier
+        décisionnels et des tableaux de bord qui transforment les données brutes en leviers
         de décision.
       </p>
+
+      <div class="hero-meta reveal">
+        <span class="meta-item"><svg width="14" height="14"><use href="#i-pin"/></svg> Lomé, Togo</span>
+        <span class="meta-item"><svg width="14" height="14"><use href="#i-clock"/></svg> GMT · Disponible</span>
+        <span class="meta-item"><svg width="14" height="14"><use href="#i-mail"/></svg> angelobtma@gmail.com</span>
+      </div>
+
       <div class="hero-cta reveal">
-        <a href="#projects" class="btn-gold">
+        <a href="#projects" class="btn-primary">
           Voir mes projets
           <svg width="18" height="18" aria-hidden="true"><use href="#i-git"/></svg>
         </a>
         <a href="#about" class="btn-ghost">En savoir plus</a>
       </div>
+
       <div class="hero-stats reveal">
         <div class="stat">
-          <span class="stat-num" data-target="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-num">4</span><span class="stat-plus">+</span>
           <span class="stat-label">Projets livrés</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-num">3</span>
           <span class="stat-label">Axes d'expertise</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+          <span class="stat-num">2</span><span class="stat-plus">+</span>
           <span class="stat-label">Années d'expérience</span>
         </div>
       </div>
@@ -236,10 +275,14 @@
   <!-- ═══════════════ ABOUT ═══════════════ -->
   <section id="about">
     <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">À propos</div>
+        <h2 class="section-title">Passionné par la donnée,<br />guidé par l'impact</h2>
+      </div>
       <div class="about-grid">
         <div class="about-left reveal">
           <div class="about-img-wrap">
-            <div class="about-avatar" data-parallax="0.06">
+            <div class="about-avatar" data-parallax="0.05">
               <div class="avatar-inner">
                 <img src="photo.jpg" alt="Photo de Tchaa Mèwè Angelo BILAKE" class="avatar-img" width="400" height="400" />
               </div>
@@ -249,8 +292,6 @@
           <div class="tech-stack"></div>
         </div>
         <div class="about-right reveal">
-          <div class="section-tag">À propos</div>
-          <h2 class="section-title">Passionné par la donnée,<br />guidé par l'impact</h2>
           <p class="about-text">
             Formé en <strong>Intelligence Artificielle &amp; Big Data</strong> à l'École
             Polytechnique de Lomé, je suis data engineer &amp; data analyst avec une approche
@@ -265,7 +306,7 @@
           </p>
           <div class="about-values">
             <div class="value-item">
-              <div class="value-icon"><svg width="20" height="20"><use href="#i-target"/></svg></div>
+              <div class="value-icon"><svg width="20" height="20"><use href="#i-compass"/></svg></div>
               <div>
                 <strong>Orienté impact</strong>
                 <p>Chaque projet vise un résultat concret et mesurable.</p>
@@ -315,7 +356,7 @@
           <div class="card-glow"></div>
           <div class="card-head">
             <span class="card-num">01</span>
-            <div class="card-icon"><svg width="30" height="30"><use href="#i-bars"/></svg></div>
+            <div class="card-icon"><svg width="28" height="28"><use href="#i-bars"/></svg></div>
           </div>
           <h3 class="card-title">Analytics Engineering</h3>
           <p class="card-desc">
@@ -339,7 +380,7 @@
           <div class="card-glow"></div>
           <div class="card-head">
             <span class="card-num">02</span>
-            <div class="card-icon"><svg width="30" height="30"><use href="#i-gear"/></svg></div>
+            <div class="card-icon"><svg width="28" height="28"><use href="#i-gear"/></svg></div>
           </div>
           <h3 class="card-title">Data Engineering</h3>
           <p class="card-desc">
@@ -363,7 +404,7 @@
           <div class="card-glow"></div>
           <div class="card-head">
             <span class="card-num">03</span>
-            <div class="card-icon"><svg width="30" height="30"><use href="#i-trend"/></svg></div>
+            <div class="card-icon"><svg width="28" height="28"><use href="#i-trend"/></svg></div>
           </div>
           <h3 class="card-title">BI &amp; Data Science</h3>
           <p class="card-desc">
@@ -407,14 +448,15 @@
   <!-- ═══════════════ CONTACT ═══════════════ -->
   <section id="contact">
     <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Contact</div>
+        <h2 class="section-title">Travaillons ensemble</h2>
+        <p class="section-desc">
+          Vous avez un projet data ambitieux ? Je suis disponible pour discuter de vos besoins.
+        </p>
+      </div>
       <div class="contact-grid">
         <div class="contact-left reveal">
-          <div class="section-tag">Contact</div>
-          <h2 class="section-title">Travaillons ensemble</h2>
-          <p class="contact-text">
-            Vous avez un projet data ambitieux ? Vous cherchez un ingénieur capable de transformer
-            vos données en levier de croissance ? Je suis disponible pour discuter de vos besoins.
-          </p>
           <div class="contact-info">
             <a href="mailto:angelobtma@gmail.com" class="contact-item">
               <div class="contact-icon"><svg width="20" height="20"><use href="#i-mail"/></svg></div>
@@ -472,7 +514,7 @@
             <textarea id="message" name="message" rows="5" required
               placeholder="Décrivez votre projet ou votre besoin..."></textarea>
           </div>
-          <button type="submit" class="btn-gold btn-full" id="submit-btn">
+          <button type="submit" class="btn-primary btn-full" id="submit-btn">
             <span>Envoyer le message</span>
             <svg width="18" height="18"><use href="#i-send"/></svg>
           </button>
@@ -485,11 +527,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <a href="#hero" class="nav-logo">
-          <span class="logo-bracket">&lt;</span>
-          <span class="logo-text">Tchaa Mèwè Angelo<span class="accent"> BILAKE</span></span>
-          <span class="logo-bracket">/&gt;</span>
-        </a>
+        <p class="footer-name">Tchaa Mèwè Angelo BILAKE</p>
         <p class="footer-copy">© 2026 · Construit avec passion et beaucoup de données</p>
         <div class="footer-links">
           <a href="#about">À propos</a>
@@ -529,7 +567,7 @@
       "icon": "factory",
       "title": "Supply Chain Data Warehouse &amp; BI",
       "description": "Entrep\u00f4t de donn\u00e9es d\u00e9cisionnel supply chain (architecture m\u00e9daille Bronze/Silver/Gold/Analytics, 19 mod\u00e8les dbt, ingestion incr\u00e9mentale avec watermark) et dashboard Streamlit interactif. Indicateurs cl\u00e9s : taux de service OTIF, rentabilit\u00e9, analyse des tendances, d\u00e9tection automatique d'anomalies et recommandations op\u00e9rationnelles. 35 tests unitaires et CI/CD GitHub Actions.",
-      "tech": ["SQL Server", "dbt", "Python", "Streamlit", "Plotly", "GitHub Actions"],
+      "tech": ["SQL Server", "dbt", "Python", "Streamlit", "GitHub Actions"],
       "tags": [
         { "label": "Analytics Eng.", "cls": "analytics" },
         { "label": "Data Eng.", "cls": "data" }
@@ -560,7 +598,7 @@
       "category": "data",
       "icon": "earth",
       "title": "Veille de Prix Agricoles (VdPA)",
-      "description": "Syst\u00e8me d'alerte pr\u00e9coce sur les prix agricoles et la s\u00e9curit\u00e9 alimentaire personnelle en Afrique de l'Ouest : collecte et suivi des prix des denr\u00e9es de base pour anticiper les crises et informer les d\u00e9cideurs.",
+      "description": "Syst\u00e8me d'alerte pr\u00e9coce sur les prix agricoles et la s\u00e9curit\u00e9 alimentaire en Afrique de l'Ouest : collecte et suivi des prix des denr\u00e9es de base pour anticiper les crises et informer les d\u00e9cideurs.",
       "tech": ["Python", "Collecte de donn\u00e9es", "Alerting"],
       "tags": [
         { "label": "Data Eng.", "cls": "data" },

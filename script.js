@@ -176,7 +176,7 @@ function onScroll() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const target = parseInt(entry.target.dataset.target, 10);
-          animateCounter(entry.target, target);
+          if (!isNaN(target)) animateCounter(entry.target, target);
           counterObserver.unobserve(entry.target);
         }
       });
@@ -209,30 +209,30 @@ function onScroll() {
       const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
       camera.position.z = 12;
 
-      // Grille matériel : sphère wireframe décorative, très discrète
+      // Sphère wireframe décorative, très discrète
       const sphere = new THREE.Mesh(
         new THREE.SphereGeometry(4.4, 22, 14),
         new THREE.MeshBasicMaterial({
-          color: 0xf5c518,
+          color: 0x0056d2,
           wireframe: true,
           transparent: true,
-          opacity: 0.09,
+          opacity: 0.08,
         })
       );
       sphere.position.set(2.4, -0.6, -6);
       scene.add(sphere);
 
-      // Particules dorées flottantes (points).
-      const COUNT = Math.min(520, Math.floor((window.innerWidth * window.innerHeight) / 4200));
+      // Particules flottantes (points), bleu royal. Nombre réduit : plus léger que lumineux.
+      const COUNT = Math.min(180, Math.floor((window.innerWidth * window.innerHeight) / 9500));
       const positions = new Float32Array(COUNT * 3);
       const colors = new Float32Array(COUNT * 3);
-      const gold = new THREE.Color(0xf5c518);
-      const goldLight = new THREE.Color(0xffde5c);
+      const royal = new THREE.Color(0x0056d2);
+      const royalLight = new THREE.Color(0x7fb2f5);
       for (let i = 0; i < COUNT; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 34;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 22;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 12 - 4;
-        const c = gold.lerp(goldLight, Math.random());
+        positions[i * 3] = (Math.random() - 0.5) * 36;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 24;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 14 - 4;
+        const c = royal.lerp(royalLight, Math.random());
         colors[i * 3] = c.r;
         colors[i * 3 + 1] = c.g;
         colors[i * 3 + 2] = c.b;
@@ -242,10 +242,10 @@ function onScroll() {
       pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
       pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
       const pMat = new THREE.PointsMaterial({
-        size: 0.055,
+        size: 0.05,
         vertexColors: true,
         transparent: true,
-        opacity: 0.85,
+        opacity: 0.5,
         sizeAttenuation: true,
         depthWrite: false,
       });
