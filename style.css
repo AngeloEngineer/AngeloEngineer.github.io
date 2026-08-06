@@ -1045,45 +1045,6 @@ section {
   color: var(--android-blue);
 }
 
-.card-footer {
-  margin-top: auto;
-}
-
-.proficiency {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.78rem;
-  color: var(--text-dim);
-}
-
-.prof-bar {
-  flex: 1;
-  height: 6px;
-  background: var(--bg-3);
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.prof-fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 5px;
-  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-}
-
-.expertise-card[data-color="analytics"] .prof-fill {
-  background: linear-gradient(90deg, var(--blue), #60a5fa);
-}
-
-.expertise-card[data-color="data"] .prof-fill {
-  background: linear-gradient(90deg, var(--orange), var(--orange-light));
-}
-
-.expertise-card[data-color="ai"] .prof-fill {
-  background: linear-gradient(90deg, var(--gold), #f59e0b);
-}
-
 /* ═══════════════════════════════════════════════
    PROJECTS
 ═══════════════════════════════════════════════ */

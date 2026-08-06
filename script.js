@@ -122,29 +122,10 @@ document.querySelectorAll('.mobile-link').forEach(link => {
 /* ─────────────────── REVEAL ON SCROLL ─────────────────── */
 const revealEls = document.querySelectorAll('.reveal');
 
-function checkReveal() {
-  const triggerBottom = window.innerHeight * 0.88;
-  revealEls.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < triggerBottom) {
-      el.classList.add('visible');
-      // Trigger prof-fill bars inside the element
-      el.querySelectorAll('.prof-fill').forEach(bar => {
-        bar.style.width = bar.style.getPropertyValue('--w') || getComputedStyle(bar).getPropertyValue('--w');
-      });
-    }
-  });
-}
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Animate proficiency bars
-      entry.target.querySelectorAll('.prof-fill').forEach(bar => {
-        const w = getComputedStyle(bar).getPropertyValue('--w').trim();
-        if (w) bar.style.width = w;
-      });
     }
   });
 }, { threshold: 0.12 });
@@ -154,21 +135,6 @@ revealEls.forEach(el => revealObserver.observe(el));
 function observeReveal(root) {
   (root || document).querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 }
-
-// Also handle proficiency bars inside expertise cards
-document.querySelectorAll('.expertise-card').forEach(card => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.prof-fill').forEach(bar => {
-          const w = getComputedStyle(bar).getPropertyValue('--w').trim();
-          if (w) bar.style.width = w;
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-  observer.observe(card);
-});
 
 
 /* ─────────────────── COUNTER ANIMATION ─────────────────── */
