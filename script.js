@@ -302,22 +302,45 @@ function renderTechStack(projects) {
   });
 }
 
-async function loadProjects() {
+function createEmptyTile() {
+  const tile = document.createElement('div');
+  tile.className = 'project-card tile-empty reveal';
+  tile.dataset.category = 'all';
+  const inner = document.createElement('div');
+  inner.className = 'tile-empty-inner';
+  inner.innerHTML = `<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg><span>À venir</span>`;
+  tile.appendChild(inner);
+  return tile;
+}
+
+function loadProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
-  try {
-    const res = await fetch('projects.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const projects = await res.json();
-    const frag = document.createDocumentFragment();
-    projects.forEach(p => frag.appendChild(createProjectCard(p)));
-    grid.appendChild(frag);
-    observeReveal(grid);
-    bindTilt();
-    renderTechStack(projects);
-  } catch (err) {
-    grid.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">Impossible de charger les projets pour le moment. Réessayez dans un instant.</p>';
+
+  const host = document.getElementById('projects-data');
+  let projects = [];
+  if (host) {
+    try {
+      projects = JSON.parse(host.textContent);
+    } catch (e) {
+      projects = [];
+    }
   }
+
+  if (!projects.length) {
+    grid.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">Aucun projet à afficher pour le moment.</p>';
+    return;
+  }
+
+  const MAX_TILES = 9;
+  const frag = document.createDocumentFragment();
+  projects.slice(0, MAX_TILES).forEach(p => frag.appendChild(createProjectCard(p)));
+  for (let i = projects.length; i < MAX_TILES; i++) frag.appendChild(createEmptyTile());
+  grid.appendChild(frag);
+
+  observeReveal(grid);
+  bindTilt();
+  renderTechStack(projects);
 }
 
 loadProjects();

@@ -7,9 +7,9 @@ const CORE = [
   './index.html',
   './style.css',
   './script.js',
-  './projects.json',
   './manifest.webmanifest',
-  './icon.svg'
+  './icon.svg',
+  './photo.jpg'
 ];
 
 self.addEventListener('install', (event) => {
