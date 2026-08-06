@@ -711,6 +711,35 @@ section {
   border-radius: 6px;
 }
 
+.about-langs {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.lang-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+  min-width: 140px;
+}
+
+.lang-item strong {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.lang-item span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 .about-img-wrap {
   display: flex;
   justify-content: center;
@@ -1260,6 +1289,162 @@ section {
 }
 
 /* ═══════════════════════════════════════════════
+   PARCOURS & CERTIFICATIONS
+═══════════════════════════════════════════════ */
+#parcours {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+
+.parcours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.parcours-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.parcours-card:hover {
+  border-color: rgba(29, 95, 204, 0.3);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.parcours-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.parcours-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--android-blue-pale);
+  border: 1.5px solid rgba(21, 101, 192, 0.22);
+  color: var(--android-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parcours-period {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--android-blue);
+  background: var(--android-blue-pale);
+  border: 1px solid rgba(21, 101, 192, 0.2);
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.parcours-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.parcours-school {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+.parcours-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.certs-block {
+  margin-top: 3rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.certs-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.certs-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-pale);
+  border: 1.5px solid rgba(212, 147, 10, 0.25);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certs-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.certs-year {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-pale);
+  border: 1px solid rgba(212, 147, 10, 0.22);
+  padding: 0.22rem 0.6rem;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.certs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cert-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-2);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.cert-item:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-pale);
+}
+
+/* ═══════════════════════════════════════════════
    CONTACT
 ═══════════════════════════════════════════════ */
 #contact {
@@ -1459,6 +1644,10 @@ footer .logo-text .accent {
     grid-template-columns: 1fr 1fr;
   }
 
+  .parcours-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1514,6 +1703,10 @@ footer .logo-text .accent {
   }
 
   .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .parcours-grid {
     grid-template-columns: 1fr;
   }
 

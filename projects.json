@@ -4,7 +4,7 @@
     "category": "analytics",
     "icon": "coin",
     "title": "SikaPay Analytics \u2013 Data Warehouse Mobile Money UEMOA",
-    "description": "Data Warehouse d\u00e9cisionnel complet pour un op\u00e9rateur de mobile money pr\u00e9sent dans 4 pays de l'UEMOA (Togo, B\u00e9nin, C\u00f4te d'Ivoire, S\u00e9n\u00e9gal). Stack open-source de bout en bout : ingestion, orchestration Airflow, transformation dbt, visualisation Metabase. Mod\u00e9lisation dimensionnelle et inclusion financi\u00e8re.",
+    "description": "Data Warehouse d\u00e9cisionnel (sch\u00e9ma en \u00e9toile) pour un op\u00e9rateur mobile money actif dans 4 pays UEMOA (Togo, B\u00e9nin, C\u00f4te d'Ivoire, S\u00e9n\u00e9gal). Sch\u00e9ma OLTP normalis\u00e9 3NF de 11 tables et g\u00e9n\u00e9ration de plus de 60 000 transactions r\u00e9alistes via Python/Faker. Pipeline ELT orchestr\u00e9 avec Apache Airflow (CeleryExecutor) et injection contr\u00f4l\u00e9e d'anomalies de qualit\u00e9 (doublons, valeurs manquantes, formats h\u00e9t\u00e9rog\u00e8nes). Mod\u00e9lisation dimensionnelle, dbt et tableaux de bord interactifs Metabase.",
     "tech": ["PostgreSQL", "Airflow", "dbt", "Metabase", "Python", "SQL"],
     "tags": [
       { "label": "Analytics Eng.", "cls": "analytics" },
@@ -20,7 +20,7 @@
     "category": "analytics",
     "icon": "factory",
     "title": "Supply Chain Data Warehouse &amp; BI",
-    "description": "Entrep\u00f4t de donn\u00e9es supply chain complet : architecture m\u00e9daille (Bronze/Silver/Gold/Analytics), 19 mod\u00e8les dbt, ingestion incr\u00e9mentale avec watermark, dashboard Streamlit 7 pages avec Time Intelligence, d\u00e9tection d'anomalies, 35 tests unitaires et CI/CD GitHub Actions.",
+    "description": "Entrep\u00f4t de donn\u00e9es d\u00e9cisionnel supply chain (architecture m\u00e9daille Bronze/Silver/Gold/Analytics, 19 mod\u00e8les dbt, ingestion incr\u00e9mentale avec watermark) et dashboard Streamlit interactif. Indicateurs cl\u00e9s : taux de service OTIF, rentabilit\u00e9, analyse des tendances, d\u00e9tection automatique d'anomalies et recommandations op\u00e9rationnelles. 35 tests unitaires et CI/CD GitHub Actions.",
     "tech": ["SQL Server", "dbt", "Python", "Streamlit", "Plotly", "GitHub Actions"],
     "tags": [
       { "label": "Analytics Eng.", "cls": "analytics" },
