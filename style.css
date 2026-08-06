@@ -548,38 +548,6 @@ button {
   background: rgba(0, 86, 210, 0.2);
 }
 
-.scroll-hint {
-  position: absolute;
-  bottom: 2.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--text-dim);
-  font-size: 0.66rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  transition: color var(--transition);
-}
-
-.scroll-hint:hover {
-  color: var(--royal);
-}
-
-.scroll-line {
-  width: 1px;
-  height: 44px;
-  background: linear-gradient(to bottom, var(--royal), transparent);
-  animation: scrollPulse 2.2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-  50% { opacity: 0.35; transform: scaleY(0.6); transform-origin: top; }
-}
-
 /* ═══════════════════════════════════════════════
    MARQUEE — bande bleu royal
 ═══════════════════════════════════════════════ */
