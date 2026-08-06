@@ -1146,14 +1146,37 @@ section {
 }
 
 .project-desc {
+  position: relative;
   font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.75;
   flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
   overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+}
+
+.project-desc-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.project-desc-seg {
+  padding-right: 0.25rem;
+}
+
+.project-desc.is-scroll .project-desc-track {
+  animation: descScroll linear infinite;
+}
+
+@keyframes descScroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.project-card:hover .project-desc.is-scroll .project-desc-track {
+  animation-play-state: paused;
 }
 
 .project-tech {

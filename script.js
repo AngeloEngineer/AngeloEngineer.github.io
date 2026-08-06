@@ -380,9 +380,15 @@ function onScroll() {
     title.textContent = decodeEntities(project.title);
     card.appendChild(title);
 
-    const desc = document.createElement('p');
+    const desc = document.createElement('div');
     desc.className = 'project-desc';
-    desc.textContent = decodeEntities(project.description);
+    const track = document.createElement('div');
+    track.className = 'project-desc-track';
+    const seg = document.createElement('p');
+    seg.className = 'project-desc-seg';
+    seg.textContent = decodeEntities(project.description);
+    track.appendChild(seg);
+    desc.appendChild(track);
     card.appendChild(desc);
 
     const tech = document.createElement('div');
@@ -461,9 +467,38 @@ function onScroll() {
 
     observeReveal(grid);
     renderTechStack(projects);
+    setupDescScrolls(grid);
   }
 
   loadProjects();
+
+  /* ─────────────────── DESC — DÉFILEMENT VERTICAL AUTO ───────────────────
+     Si la description dépasse son étiquette, on la fait défiler lentement en
+     marquee vertical (contenu dupliqué). Le survol fige la lecture. */
+  function setupDescScrolls(grid) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    grid.querySelectorAll('.project-desc').forEach((desc) => {
+      if (desc.dataset.scrollReady || reduced) return;
+      const track = desc.querySelector('.project-desc-track');
+      const seg = desc.querySelector('.project-desc-seg');
+      // Le texte dépasse-t-il son étagère ?
+      if (seg.scrollHeight > desc.clientHeight + 10) {
+        desc.classList.add('is-scroll');
+        const dup = seg.cloneNode(true);
+        dup.setAttribute('aria-hidden', 'true');
+        track.appendChild(dup);
+        // Durée proportionnelle à la longueur du texte, bornée
+        const dur = Math.min(24, Math.max(9, Math.round(seg.textContent.length * 0.045)));
+        track.style.animationDuration = dur + 's';
+      }
+      desc.dataset.scrollReady = '1';
+    });
+  }
+
+  // Re-mesurer quand les polices web sont prêtes (hauteurs définitives)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => setupDescScrolls(document.getElementById('projects-grid')));
+  }
 
   /* ─────────────────── ACTIVE NAV LINK ─────────────────── */
   const sections = document.querySelectorAll('section[id]');
