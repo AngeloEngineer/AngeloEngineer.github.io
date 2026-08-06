@@ -760,9 +760,16 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .avatar-ring {
