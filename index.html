@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio – Analytics Engineering · Data Engineering · BI & Data Science" />
+  <meta name="theme-color" content="#ea7c00" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <title>Portfolio | Data Engineer &amp; Data Analyst</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CSS CRITIQUE (above-the-fold) : tokens + reset + nav + hero.
+       Inliné pour le First Paint. Le reste de la feuille (style.css)
+       est chargé de manière différée (pattern "critical CSS").
+  ═══════════════════════════════════════════════════════════════ -->
+  <style>
+    /* ═══ TOKENS – primitives / sémantique / composants ═══ */
+    :root {
+      /*── Primitives ──*/
+      --prim-orange-600: #d47000;
+      --prim-orange-500: #ea7c00;
+      --prim-orange-400: #f59e0b;
+      --prim-orange-glow: rgba(234, 124, 0, 0.22);
+      --prim-orange-pale: #fff7ed;
+      --prim-blue-600: #1d5fcc;
+      --prim-blue-500: #3b82f6;
+      --prim-blue-glow: rgba(29, 95, 204, 0.18);
+      --prim-blue-pale: #eff6ff;
+      --prim-android-600: #1565C0;
+      --prim-android-500: #1976D2;
+      --prim-android-pale: #e3f2fd;
+      --prim-android-glow: rgba(21, 101, 192, 0.18);
+      --prim-gold-500: #d4930a;
+      --prim-gold-glow: rgba(212, 147, 10, 0.2);
+      --prim-gold-pale: #fffbeb;
+      --prim-green-600: #16a34a;
+      --prim-green-500: #059669;
+      --prim-ink-900: #111827;
+      --prim-ink-600: #6b7280;
+      --prim-ink-400: #9ca3af;
+      --prim-snow-0: #ffffff;
+      --prim-snow-1: #f8f7f4;
+      --prim-snow-2: #f2f0eb;
+      --prim-snow-3: #fdfcf9;
+
+      /* Sémantique */
+      --color-bg: var(--prim-snow-0);
+      --color-bg-alt: var(--prim-snow-1);
+      --color-surface: var(--prim-snow-0);
+      --color-border: var(--prim-snow-0);
+      --color-heading: var(--prim-ink-900);
+      --color-primary: var(--prim-orange-500);
+      --color-secondary: var(--prim-blue-600);
+      --color-success: var(--prim-green-600);
+
+      /* Composants (alias retro-compatibles utilisés par les composants) */
+      --bg: var(--prim-snow-0);
+      --bg-2: var(--prim-snow-1);
+      --bg-3: var(--prim-snow-2);
+      --surface: #ffffff;
+      --surface-2: var(--prim-snow-3);
+      --border: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(234, 130, 0, 0.45);
+      --orange: var(--prim-orange-500);
+      --orange-light: var(--prim-orange-400);
+      --orange-glow: var(--prim-orange-glow);
+      --orange-pale: var(--prim-orange-pale);
+      --blue: var(--prim-blue-600);
+      --blue-light: var(--prim-blue-500);
+      --blue-glow: var(--prim-blue-glow);
+      --blue-pale: var(--prim-blue-pale);
+      --android-blue: var(--prim-android-600);
+      --android-blue-light: var(--prim-android-700);
+      --android-blue-pale: var(--prim-android-pale);
+      --android-blue-glow: var(--prim-android-glow);
+      --gold: var(--prim-gold-500);
+      --analytics: var(--prim-blue-600);
+      --analytics-glow: var(--prim-blue-glow);
+      --data: var(--prim-orange-500);
+      --data-glow: var(--prim-orange-glow);
+      --ai: var(--prim-gold-500);
+      --ai-glow: var(--prim-gold-glow);
+      --accent: var(--prim-orange-500);
+      --accent-2: var(--prim-blue-600);
+      --green: var(--prim-green-600);
+      --text: var(--prim-ink-900);
+      --text-muted: var(--prim-ink-600);
+      --text-dim: var(--prim-ink-400);
+      --font: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.07);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.09);
+      --shadow-lg: 0 16px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Reset & base */
+    *,
+    *::before,
+    *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+    button { cursor: pointer; font-family: var(--font); }
+
+    #bg-canvas {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none; opacity: 0.35;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* Navbar */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 2rem;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1200px; margin: 0 auto; }
+    .nav-logo { font-family: var(--mono); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
+    .logo-bracket { color: var(--orange); }
+    .logo-text .accent { color: var(--blue); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: 0.925rem; font-weight: 500; transition: color var(--transition); position: relative; }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px;
+      background: var(--orange); transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition); border-radius: 2px;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .btn-nav {
+      background: var(--orange); color: #fff; padding: 0.55rem 1.4rem; border-radius: 50px;
+      font-size: 0.875rem; font-weight: 700; transition: var(--transition);
+      box-shadow: 0 4px 16px var(--orange-glow);
+    }
+    .btn-nav:hover { background: var(--prim-orange-600); transform: translateY(-2px); box-shadow: 0 8px 28px var(--orange-glow); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem; flex-direction: column; gap: 1.2rem; z-index: 999;
+      border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-link { color: var(--text-muted); font-weight: 500; font-size: 1.1rem; padding: 0.4rem 0; transition: color var(--transition); }
+    .mobile-link:hover { color: var(--orange); }
+
+    /* Hero */
+    #hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      padding: 8rem 2rem 4rem; max-width: 1200px; margin: 0 auto; gap: 4rem; z-index: 1;
+    }
+    #hero::after {
+      content: ''; position: absolute; top: 10%; right: -80px; width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(234, 124, 0, 0.07) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-content { flex: 1; max-width: 620px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(22, 163, 74, 0.08); border: 1px solid rgba(22, 163, 74, 0.25);
+      color: var(--green); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem;
+      font-weight: 600; margin-bottom: 1.8rem; letter-spacing: 0.03em;
+    }
+    .badge-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-green 2s infinite; }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+    }
+    .hero-title { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.025em; color: var(--text); margin-bottom: 1.4rem; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--orange), var(--android-blue-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2.4rem; line-height: 1.8; }
+    .hero-sub strong { color: var(--android-blue); font-weight: 700; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: var(--orange);
+      color: #fff; padding: 0.85rem 2rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem;
+      transition: var(--transition); box-shadow: 0 6px 24px var(--orange-glow); border: none;
+    }
+    .btn-primary:hover { background: var(--prim-orange-600); transform: translateY(-3px); box-shadow: 0 12px 36px var(--orange-glow); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--text-muted);
+      padding: 0.85rem 2rem; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      border: 1.5px solid var(--border); transition: var(--transition);
+    }
+    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-pale); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 2rem; align-items: center; }
+    .stat { text-align: left; }
+    .stat-num { font-size: 2.2rem; font-weight: 900; font-family: var(--mono); color: var(--orange); }
+    .stat:nth-child(3) .stat-num { color: var(--android-blue); }
+    .stat-label { display: block; font-size: 0.78rem; color: var(--text-dim); font-weight: 500; margin-top: 0.1rem; }
+    .stat-divider { width: 1px; height: 40px; background: var(--border); }
+    .hero-visual { flex: 0 0 420px; position: relative; height: 420px; display: flex; align-items: center; justify-content: center; }
+    .orbit-ring { position: absolute; border-radius: 50%; border: 1.5px dashed rgba(234, 124, 0, 0.22); display: flex; align-items: center; justify-content: center; }
+    .ring-1 { width: 300px; height: 300px; animation: orbit-cw 18s linear infinite; border-color: rgba(29, 95, 204, 0.18); }
+    .ring-2 { width: 420px; height: 420px; animation: orbit-ccw 25s linear infinite; border-color: rgba(234, 124, 0, 0.14); }
+    .orbit-icon { position: absolute; width: 100%; height: 100%; transform: rotate(var(--a)); }
+    .icon-chip {
+      position: absolute; top: -18px; left: 50%; transform: translateX(-50%) rotate(calc(-1 * var(--a)));
+      width: 42px; height: 42px; background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md);
+    }
+    .hero-core {
+      position: relative; z-index: 10; width: 148px; height: 148px; background: #fff;
+      border: 2px solid rgba(234, 124, 0, 0.3); border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 10px rgba(234, 124, 0, 0.06), var(--shadow-lg);
+    }
+    .core-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; color: var(--orange); letter-spacing: 0.12em; }
+    .core-sub { font-size: 0.65rem; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.08em; }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-dim);
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; animation: bounce 2s ease-in-out infinite;
+    }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--orange-light), transparent); }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+    @keyframes orbit-cw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes orbit-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+    @keyframes spin-ring { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    section { padding: 6rem 0; position: relative; z-index: 1; }
+    .section-tag {
+      display: inline-block; font-family: var(--mono); font-size: 0.75rem; font-weight: 700;
+      color: var(--android-blue); letter-spacing: 0.14em; text-transform: uppercase;
+      background: var(--android-blue-pale); border: 1px solid rgba(21, 101, 192, 0.22);
+      padding: 0.3rem 0.9rem; border-radius: 50px; margin-bottom: 1rem;
+    }
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; color: var(--text); position: relative; }
+    .section-title::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 48px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--android-blue), var(--android-blue-light)); }
+    .section-header .section-title::after { left: 50%; transform: translateX(-50%); }
+
+    /* Reveal (nécessaire dès le premier rendu) */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+
+  <!-- Feuille complète chargée de façon différée (Beasties-like) -->
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SVG SPRITE (équivalent statique d'une police d'icônes maison)
+       Défini une seule fois, référencé partout via <use>.
+  ═══════════════════════════════════════════════════════════════ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><polyline points="14 16 18 12 14 8"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+    <symbol id="i-earth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="12" x2="9" y2="12.01"/><line x1="9" y1="15" x2="9" y2="15.01"/><line x1="9" y1="18" x2="9" y2="18.01"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+    </symbol>
+  </svg>
+
+  <!-- ═══════════════════════ CANVAS BACKGROUND ═══════════════════════ -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Tchaa Mèwè Angelo<span class="accent"> BILAKE</span></span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-nav">Me contacter</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-link">À propos</a>
+    <a href="#expertise" class="mobile-link">Expertise</a>
+    <a href="#projects" class="mobile-link">Projets</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Disponible pour des opportunités
+      </div>
+      <h1 class="hero-title reveal">
+        Transformer la <span class="gradient-text">donnée brute</span><br />
+        en intelligence exploitable
+      </h1>
+      <p class="hero-sub reveal">
+        Data Engineer &amp; Data Analyst passionné · spécialisé en <strong>Analytics Engineering</strong>,
+        <strong>Data Engineering</strong> et <strong>BI &amp; Data Science</strong>.
+        Je construis des entrepôts de données, des pipelines robustes et des analyses qui font la différence.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn-primary">Voir mes projets</a>
+        <a href="#about" class="btn-ghost">En savoir plus</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-target="4">0</span>+
+          <span class="stat-label">Projets réalisés</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">Domaines d'expertise</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="2">0</span>+
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit-ring ring-1">
+        <div class="orbit-icon" style="--a:0deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-code"/></svg></div></div>
+        <div class="orbit-icon" style="--a:90deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-zap"/></svg></div></div>
+        <div class="orbit-icon" style="--a:180deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-git"/></svg></div></div>
+        <div class="orbit-icon" style="--a:270deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-cloud"/></svg></div></div>
+      </div>
+      <div class="orbit-ring ring-2">
+        <div class="orbit-icon" style="--a:45deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-cpu"/></svg></div></div>
+        <div class="orbit-icon" style="--a:135deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-bars"/></svg></div></div>
+        <div class="orbit-icon" style="--a:225deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-refresh"/></svg></div></div>
+        <div class="orbit-icon" style="--a:315deg"><div class="icon-chip"><svg width="20" height="20"><use href="#i-target"/></svg></div></div>
+      </div>
+      <div class="hero-core">
+        <div class="core-label">DATA ENGINEER</div>
+        <div class="core-sub">&amp; Data Analyst</div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <div class="about-img-wrap">
+            <div class="about-avatar">
+              <div class="avatar-inner">
+                <span class="avatar-emoji"><svg width="56" height="56"><use href="#i-user"/></svg></span>
+              </div>
+              <div class="avatar-ring"></div>
+              <div class="avatar-status">
+                <span class="status-dot"></span> Open to work
+              </div>
+            </div>
+          </div>
+          <div class="tech-stack"></div>
+        </div>
+        <div class="about-right reveal">
+          <div class="section-tag">À propos</div>
+          <h2 class="section-title">Passionné par la donnée,<br />guidé par l'impact</h2>
+          <p class="about-text">
+            Je suis un data engineer &amp; data analyst avec une approche <strong>end-to-end</strong> :
+            de la collecte des données brutes jusqu'aux tableaux de bord décisionnels et aux analyses.
+            Mon objectif est de construire des systèmes fiables, scalables et porteurs de valeur métier.
+          </p>
+          <p class="about-text">
+            À l'intersection de trois disciplines complémentaires, je conçois des entrepôts de données
+            complets, des pipelines ETL/ELT robustes, et des analyses BI &amp; data science qui passent à l'échelle.
+          </p>
+          <div class="about-values">
+            <div class="value-item">
+              <div class="value-icon"><svg width="20" height="20"><use href="#i-target"/></svg></div>
+              <div>
+                <strong>Orienté impact</strong>
+                <p>Chaque projet vise un résultat concret et mesurable.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><svg width="20" height="20"><use href="#i-search"/></svg></div>
+              <div>
+                <strong>Rigueur scientifique</strong>
+                <p>Approche méthodique basée sur les données et les expériences.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><svg width="20" height="20"><use href="#i-trend"/></svg></div>
+              <div>
+                <strong>Pensée scalable</strong>
+                <p>Solutions conçues pour évoluer avec les besoins métier.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EXPERTISE ═══════════════════════ -->
+  <section id="expertise">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Expertise</div>
+        <h2 class="section-title">Trois axes d'excellence</h2>
+        <p class="section-desc">Des compétences complémentaires qui couvrent tout le cycle de vie de la donnée.</p>
+      </div>
+      <div class="expertise-grid">
+
+        <!-- Analytics Engineering -->
+        <div class="expertise-card reveal" data-color="analytics">
+          <div class="card-glow"></div>
+          <div class="card-icon"><svg width="32" height="32"><use href="#i-bars"/></svg></div>
+          <h3 class="card-title">Analytics Engineering</h3>
+          <p class="card-desc">
+            Transformation des données brutes en modèles analytiques fiables.
+            Je construis des pipelines dbt, des data marts et des tableaux de bord
+            qui permettent aux équipes de prendre des décisions basées sur les données.
+          </p>
+          <div class="card-skills">
+            <span class="skill-tag">dbt</span>
+            <span class="skill-tag">SQL avancé</span>
+            <span class="skill-tag">Metabase / Power BI</span>
+            <span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">Data Quality</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">PostgreSQL</span>
+          </div>
+          <div class="card-footer">
+            <div class="proficiency">
+              <span>Maîtrise</span>
+              <div class="prof-bar">
+                <div class="prof-fill" style="--w:92%"></div>
+              </div>
+              <span>92%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Engineering -->
+        <div class="expertise-card reveal" data-color="data">
+          <div class="card-glow"></div>
+          <div class="card-icon"><svg width="32" height="32"><use href="#i-gear"/></svg></div>
+          <h3 class="card-title">Data Engineering</h3>
+          <p class="card-desc">
+            Architecture et mise en place d'infrastructures de données robustes et scalables.
+            Pipelines ETL/ELT, orchestration, haute disponibilité des bases de données,
+            et migration de données entre systèmes sans perte d'information.
+          </p>
+          <div class="card-skills">
+            <span class="skill-tag">Apache Airflow</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">ETL / ELT</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">Patroni</span>
+            <span class="skill-tag">Docker / Linux</span>
+          </div>
+          <div class="card-footer">
+            <div class="proficiency">
+              <span>Maîtrise</span>
+              <div class="prof-bar">
+                <div class="prof-fill" style="--w:88%"></div>
+              </div>
+              <span>88%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BI & Data Science -->
+        <div class="expertise-card reveal" data-color="ai">
+          <div class="card-glow"></div>
+          <div class="card-icon"><svg width="32" height="32"><use href="#i-trend"/></svg></div>
+          <h3 class="card-title">BI &amp; Data Science</h3>
+          <p class="card-desc">
+            Analyse exploratoire et décisionnelle de données métier : campagnes marketing,
+            prix, séries temporelles. Segmentation client, mesure de la rétention et
+            recommandations actionnables en langage naturel.
+          </p>
+          <div class="card-skills">
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">Analyse exploratoire</span>
+            <span class="skill-tag">Séries temporelles</span>
+            <span class="skill-tag">Segmentation</span>
+            <span class="skill-tag">Statistiques</span>
+            <span class="skill-tag">IA générative</span>
+          </div>
+          <div class="card-footer">
+            <div class="proficiency">
+              <span>Maîtrise</span>
+              <div class="prof-bar">
+                <div class="prof-fill" style="--w:85%"></div>
+              </div>
+              <span>85%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Projets</div>
+        <h2 class="section-title">Réalisations concrètes</h2>
+        <p class="section-desc">Des projets qui illustrent mon approche data-driven et ma capacité à livrer.</p>
+      </div>
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="analytics">Analytics Engineering</button>
+        <button class="filter-btn" data-filter="data">Data Engineering</button>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════
+           Contenu découplé : le rendu s'effectue depuis projects.json
+           (pattern "headless"). Ajouter un projet => édition du JSON.
+      ═══════════════════════════════════════════════════════════════ -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Travaillons ensemble</h2>
+          <p class="contact-text">
+            Vous avez un projet data ambitieux ? Vous cherchez un ingénieur capable de transformer
+            vos données en levier de croissance ? Je suis disponible pour discuter de vos besoins.
+          </p>
+          <div class="contact-info">
+            <a href="mailto:tchaamewea@gmail.com" class="contact-item">
+              <div class="contact-icon"><svg width="20" height="20"><use href="#i-mail"/></svg></div>
+              <div>
+                <strong>Email principal</strong>
+                <span>tchaamewea@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/tchaa-m%C3%A8w%C3%A8-angelo-bilake-095107354" target="_blank"
+              rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon"><svg width="20" height="20"><use href="#i-briefcase"/></svg></div>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Tchaa Mèwè Angelo BILAKE</span>
+              </div>
+            </a>
+            <a href="https://github.com/AngeloEngineer" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon"><svg width="20" height="20"><use href="#i-github"/></svg></div>
+              <div>
+                <strong>GitHub</strong>
+                <span>AngeloEngineer</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jean@exemple.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" placeholder="Opportunité / Collaboration / Question" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre besoin..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="submit-btn">
+            <span>Envoyer le message</span>
+            <svg width="18" height="18"><use href="#i-send"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">Tchaa Mèwè Angelo<span class="accent"> BILAKE</span></span>
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">© 2026 · Construit avec passion et beaucoup de données</p>
+        <div class="footer-links">
+          <a href="#about">À propos</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#projects">Projets</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
