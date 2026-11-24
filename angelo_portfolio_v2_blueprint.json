@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "document_title": "Angelo Data Lab V2.1 — Charte Pervenche & Bleu Royal (portfeuille.zip) + Architecture Néo-Brutaliste (Boris Koulevo)",
+    "version": "2.1.0",
+    "created_at": "2026-11-24",
+    "source_archive_analyzed": "portfeuille.zip",
+    "reference_design_analyzed": "https://borisjunior.github.io/portfolio/",
+    "live_target_url": "https://angeloengineer.github.io/",
+    "author": {
+      "full_name": "Tchaa Mèwè Angelo BILAKE",
+      "handle": "AngeloEngineer",
+      "brand_title": "ANGELO.LAB'S",
+      "subtitle_fr": "Data utile · pipelines · BI",
+      "subtitle_en": "Useful Data · pipelines · BI",
+      "positioning_fr": "Data Engineer & Expert en Analytics · IA & Big Data",
+      "positioning_en": "Data Engineer & Analytics Specialist · AI & Big Data",
+      "location": "Lomé, Togo (GMT)",
+      "email": "angelobtma@gmail.com",
+      "phone": "+228 93 10 66 65",
+      "linkedin": "https://www.linkedin.com/in/tchaa-m%C3%A8w%C3%A8-angelo-bilake-095107354",
+      "github": "https://github.com/AngeloEngineer",
+      "formspree_endpoint": "https://formspree.io/f/xpwdgkpb"
+    }
+  },
+  "design_system_fusion": {
+    "concept": "Fusionner la palette signature 'Pervenche & Bleu Royal' de portfeuille.zip (#D0E7FF / #0056D2 / #FFFFFF / #0E9F6E / #C9971C / #1A1A1A) avec la grille néo-brutaliste, les bordures franches de 2px, les ombres décalées de 4px, les graphes SVG animés par CSS offset-path et l'inspecteur de pipelines en 5 étapes de Boris Koulevo.",
+    "color_tokens_from_portfeuille_zip": {
+      "--bg-paper": "#D0E7FF",
+      "--bg-2": "#E3F0FF",
+      "--bg-3": "#F2F8FF",
+      "--surface": "#FFFFFF",
+      "--surface-2": "#E8F2FF",
+      "--royal": "#0056D2",
+      "--royal-dark": "#0043A8",
+      "--royal-light": "#2E6FE8",
+      "--royal-pale": "#E4EFFF",
+      "--emerald": "#0E9F6E",
+      "--emerald-pale": "#D1FAE5",
+      "--gold": "#C9971C",
+      "--gold-pale": "#FEF3C7",
+      "--text-ink": "#1A1A1A",
+      "--text-muted": "#46597A",
+      "--text-dim": "#6C7F9E",
+      "--border-ink": "#1A1A1A"
+    },
+    "color_mapping_from_boris_to_angelo": {
+      "boris_bg_paper (#FAF8F5)": "angelo_bg_pervenche (#D0E7FF) + panneaux intérieurs en #F2F8FF et #FFFFFF",
+      "boris_text_ink (#121212)": "angelo_text_ink (#1A1A1A) pour les textes, bordures 2px et ombres dures 4px",
+      "boris_accent_yellow (#FAD77A)": "angelo_royal_blue (#0056D2 sur texte blanc, ou #E4EFFF / #FEF3C7 sur texte #1A1A1A)",
+      "boris_accent_coral (#E86F56)": "angelo_gold (#F5C451 / #C9971C) pour les podiums, noeuds Gouvernance et alertes",
+      "boris_accent_cyan (#70C1B3)": "angelo_emerald (#0E9F6E / #A7F3D0) pour les noeuds Lakehouse, HA et statuts LIVRÉ"
+    },
+    "typography": {
+      "--font-heading": "'Space Grotesk', 'Fraunces', sans-serif",
+      "--font-serif-accent": "'Fraunces', Georgia, serif",
+      "--font-mono": "'JetBrains Mono', monospace",
+      "--font-body": "'Inter', system-ui, sans-serif"
+    },
+    "brutalist_mechanics": {
+      "border": "2px solid #1A1A1A",
+      "shadow_default": "4px 4px 0px 0px #1A1A1A",
+      "shadow_royal": "4px 4px 0px 0px #0056D2",
+      "shadow_hover": "2px 2px 0px 0px #1A1A1A",
+      "shadow_active": "0px 0px 0px 0px #1A1A1A",
+      "transform_hover": "translate(2px, 2px)",
+      "transform_active": "translate(4px, 4px)"
+    }
+  },
+  "sections_architecture": [
+    {
+      "id": "header",
+      "pattern_from_boris": "Header sticky 72px avec bordure basse 2px, logo encadré [</>], navigation indexée [01] à [05], switch bilingue FR/EN en direct, bouton CV et bouton > CONTACT."
+    },
+    {
+      "id": "hero",
+      "pattern_from_boris": "Grille asymétrique 2 colonnes : identité + rôle avec curseur clignotant + 3 CTAs mécaniques à gauche ; Lab Board interactif avec coins de visée, chemins SVG pointillés et paquets CSS offset-path à droite (intégrant photo.jpg d'Angelo au coeur du noeud central)."
+    },
+    {
+      "id": "data-lab",
+      "index": "[01]",
+      "pattern_from_boris": "Section Agentic Lab transposée en DATA & AI ENGINEERING LAB : légende interactive à 9 modules à gauche synchronisée au survol et au clic avec le graphe d'architecture à 9 noeuds à droite + vue mobile en couches repliables et cartes verticales."
+    },
+    {
+      "id": "missions",
+      "index": "[02]",
+      "pattern_from_boris": "Section Missions IA en Master-Detail : barre de filtres + 5 cartes projets cliquables (SikaPay Analytics, Supply Chain DW, AcierTech PG16 HA, CFPB NLP Lakehouse, AO-BTP & VdPA) qui pilotent un inspecteur de pipeline en 5 étapes fléchées sur desktop et un tiroir modal (Bottom Sheet) sur mobile."
+    },
+    {
+      "id": "flagship",
+      "index": "[03]",
+      "pattern_from_boris": "Section Pass ATS transposée en Focus Architecture Phare (SikaPay Analytics UEMOA & Lakehouse) avec panneau de flux horizontal en 5 étapes et mise en avant du moteur central [03] MOTEUR DBT & QUALITÉ."
+    },
+    {
+      "id": "podiums",
+      "index": "[04]",
+      "pattern_from_boris": "Section Communauté transposée en Podiums, Preuves & Profil : carte dossier avec photo.jpg et 3 axes d'expertise à gauche + grille de 4 cartes KPI néo-brutalistes à droite (2e place Datatour 2026, 3e place Togo AI Lab, Architecture Lakehouse 500k+ & 35 tests CI/CD, Failover PostgreSQL 16 HA < 30s)."
+    },
+    {
+      "id": "contact",
+      "index": "[05]",
+      "pattern_from_boris": "Panneau de contact néo-brutaliste à coins de visée combinant les 4 boutons directs de Boris (LinkedIn, GitHub, Email, Téléphone) et le formulaire Formspree fonctionnel (https://formspree.io/f/xpwdgkpb) issu de portfeuille.zip."
+    }
+  ],
+  "missions_data": [
+    {
+      "id": "sikapay",
+      "badge": "[01]",
+      "category": "analytics",
+      "tag_fr": "LIVRÉ · DWH",
+      "tag_en": "DELIVERED · DWH",
+      "accent": "royal",
+      "title_fr": "SikaPay Analytics UEMOA",
+      "title_en": "SikaPay Analytics WAEMU",
+      "summary_fr": "Data Warehouse Mobile Money multi-pays (Togo, Bénin, Côte d'Ivoire, Sénégal).",
+      "summary_en": "Multi-country Mobile Money Data Warehouse (Togo, Benin, Ivory Coast, Senegal).",
+      "metric_fr": "PostgreSQL · Apache Airflow (CeleryExecutor) · dbt · 3NF (11 tables) -> Étoile · Metabase (+60k tx)",
+      "metric_en": "PostgreSQL · Apache Airflow (CeleryExecutor) · dbt · 3NF (11 tables) -> Star Schema · Metabase (60k+ tx)",
+      "code_url": "https://github.com/AngeloEngineer/sikapay-analytics",
+      "doc_url": "https://github.com/AngeloEngineer/sikapay-analytics/blob/master/README.md",
+      "pipeline": [
+        {
+          "step": "[01]",
+          "label_fr": "OLTP 3NF (11 tables)",
+          "label_en": "3NF OLTP (11 tables)",
+          "desc_fr": "+60 000 transactions UEMOA générées.",
+          "desc_en": "60,000+ WAEMU transactions generated."
+        },
+        {
+          "step": "[02]",
+          "label_fr": "Airflow Celery",
+          "label_en": "Airflow Celery",
+          "desc_fr": "Orchestration ELT & ingestion planifiée.",
+          "desc_en": "ELT orchestration & scheduled ingestion."
+        },
+        {
+          "step": "[03]",
+          "label_fr": "Contrôle Anomalies",
+          "label_en": "Anomaly Gate",
+          "desc_fr": "Filtrage doublons, nulls et formats hétérogènes.",
+          "desc_en": "Filtering duplicates, nulls & messy formats."
+        },
+        {
+          "step": "[04]",
+          "label_fr": "Modèles dbt Étoile",
+          "label_en": "dbt Star Schema",
+          "desc_fr": "Modélisation dimensionnelle Kimball testée.",
+          "desc_en": "Tested Kimball dimensional modeling."
+        },
+        {
+          "step": "[05]",
+          "label_fr": "BI Metabase",
+          "label_en": "Metabase BI",
+          "desc_fr": "Tableaux de bord volumes & commissions.",
+          "desc_en": "Executive volume & fee dashboards."
+        }
+      ]
+    },
+    {
+      "id": "supplychain",
+      "badge": "[02]",
+      "category": "analytics",
+      "tag_fr": "LIVRÉ · MÉDAILLE",
+      "tag_en": "DELIVERED · MEDALLION",
+      "accent": "emerald",
+      "title_fr": "Supply Chain DW & BI",
+      "title_en": "Supply Chain DW & BI",
+      "summary_fr": "Entrepôt Bronze/Silver/Gold (19 modèles dbt) & pilotage OTIF sous Streamlit.",
+      "summary_en": "Bronze/Silver/Gold warehouse (19 dbt models) & Streamlit OTIF analytics.",
+      "metric_fr": "SQL Server · 19 modèles dbt · Ingestion Watermark · 35 tests unitaires · GitHub Actions CI/CD",
+      "metric_en": "SQL Server · 19 dbt models · Watermark Ingestion · 35 unit tests · GitHub Actions CI/CD",
+      "code_url": "https://github.com/AngeloEngineer/SupplyChain_DW",
+      "doc_url": "https://github.com/AngeloEngineer/SupplyChain_DW/blob/main/instructions.md",
+      "pipeline": [
+        {
+          "step": "[01]",
+          "label_fr": "Flux Supply Chain",
+          "label_en": "Supply Chain Feeds",
+          "desc_fr": "Commandes, stocks et délais logistiques.",
+          "desc_en": "Orders, inventory, and delivery lead times."
+        },
+        {
+          "step": "[02]",
+          "label_fr": "Watermark Bronze",
+          "label_en": "Bronze Watermark",
+          "desc_fr": "Ingestion incrémentale SQL Server sans doublon.",
+          "desc_en": "Idempotent SQL Server incremental load."
+        },
+        {
+          "step": "[03]",
+          "label_fr": "19 Modèles dbt",
+          "label_en": "19 dbt Models",
+          "desc_fr": "Architecture médaille Bronze -> Silver -> Gold.",
+          "desc_en": "Bronze -> Silver -> Gold Medallion layers."
+        },
+        {
+          "step": "[04]",
+          "label_fr": "35 Tests CI/CD",
+          "label_en": "35 CI/CD Tests",
+          "desc_fr": "Validation automatisée via GitHub Actions.",
+          "desc_en": "Automated validation via GitHub Actions."
+        },
+        {
+          "step": "[05]",
+          "label_fr": "Dashboard OTIF",
+          "label_en": "OTIF Dashboard",
+          "desc_fr": "Streamlit interactif & détection d'anomalies.",
+          "desc_en": "Interactive Streamlit & anomaly detection."
+        }
+      ]
+    },
+    {
+      "id": "aciertech",
+      "badge": "[03]",
+      "category": "data",
+      "tag_fr": "LIVRÉ · HA",
+      "tag_en": "DELIVERED · HA",
+      "accent": "gold",
+      "title_fr": "AcierTech DBA Platform",
+      "title_en": "AcierTech DBA Platform",
+      "summary_fr": "Plateforme PostgreSQL 16 Haute Disponibilité & pipeline IoT (47 capteurs).",
+      "summary_en": "High-Availability PostgreSQL 16 platform & IoT pipeline (47 sensors).",
+      "metric_fr": "PostgreSQL 16 · Patroni + etcd (Failover < 30s) · HAProxy · pgBouncer · pgBackRest (RPO < 5m) · Grafana",
+      "metric_en": "PostgreSQL 16 · Patroni + etcd (Failover < 30s) · HAProxy · pgBouncer · pgBackRest (RPO < 5m) · Grafana",
+      "code_url": "https://github.com/AngeloEngineer/aciertech-dba-platform",
+      "doc_url": "https://github.com/AngeloEngineer/aciertech-dba-platform/blob/main/README.md",
+      "pipeline": [
+        {
+          "step": "[01]",
+          "label_fr": "47 Capteurs IoT",
+          "label_en": "47 IoT Sensors",
+          "desc_fr": "Télémétrie industrielle d'aciérie à Lomé.",
+          "desc_en": "Steel plant industrial telemetry in Lomé."
+        },
+        {
+          "step": "[02]",
+          "label_fr": "HAProxy & pgBouncer",
+          "label_en": "HAProxy & pgBouncer",
+          "desc_fr": "Équilibrage de charge et pooling de connexions.",
+          "desc_en": "Load balancing and connection pooling."
+        },
+        {
+          "step": "[03]",
+          "label_fr": "Cluster Patroni + etcd",
+          "label_en": "Patroni + etcd Cluster",
+          "desc_fr": "Haute disponibilité avec bascule < 30s.",
+          "desc_en": "High availability with failover < 30s."
+        },
+        {
+          "step": "[04]",
+          "label_fr": "Qualité PL/pgSQL",
+          "label_en": "PL/pgSQL Quality",
+          "desc_fr": "Validation et nettoyage des mesures IoT.",
+          "desc_en": "Validation and cleaning of IoT readings."
+        },
+        {
+          "step": "[05]",
+          "label_fr": "PITR & Grafana",
+          "label_en": "PITR & Grafana",
+          "desc_fr": "Sauvegardes pgBackRest (RPO < 5m) & monitoring.",
+          "desc_en": "pgBackRest backups (RPO < 5m) & monitoring."
+        }
+      ]
+    },
+    {
+      "id": "cfpb-lakehouse",
+      "badge": "[04]",
+      "category": "ai",
+      "tag_fr": "EN COURS · R&D",
+      "tag_en": "IN PROGRESS · R&D",
+      "accent": "royal",
+      "title_fr": "CFPB NLP Lakehouse",
+      "title_en": "CFPB NLP Lakehouse",
+      "summary_fr": "Lakehouse ELT & vectoriel sur +500 000 plaintes financières consommateurs US.",
+      "summary_en": "ELT & vector Lakehouse on 500,000+ US consumer financial complaints.",
+      "metric_fr": "DuckDB · Parquet Zstd (Hive) · Polars · PyArrow · dbt · pgvector (PG17) · Audits bloquants",
+      "metric_en": "DuckDB · Zstd Parquet (Hive) · Polars · PyArrow · dbt · pgvector (PG17) · Blocking Audits",
+      "code_url": "https://github.com/AngeloEngineer",
+      "doc_url": "https://github.com/AngeloEngineer",
+      "pipeline": [
+        {
+          "step": "[01]",
+          "label_fr": "Archive CFPB (ZIP)",
+          "label_en": "CFPB Archive (ZIP)",
+          "desc_fr": "Ingestion streaming out-of-core PyArrow.",
+          "desc_en": "Out-of-core PyArrow streaming ingestion."
+        },
+        {
+          "step": "[02]",
+          "label_fr": "Bronze Parquet Zstd",
+          "label_en": "Bronze Zstd Parquet",
+          "desc_fr": "Partitionnement year=YYYY & swap .staging.",
+          "desc_en": "year=YYYY partitioning & atomic .staging swap."
+        },
+        {
+          "step": "[03]",
+          "label_fr": "Silver dbt & DLP",
+          "label_en": "Silver dbt & DLP",
+          "desc_fr": "Nettoyage PII, dédoublonnage et contrats.",
+          "desc_en": "PII redaction, deduplication & data contracts."
+        },
+        {
+          "step": "[04]",
+          "label_fr": "Gold & pgvector",
+          "label_en": "Gold & pgvector",
+          "desc_fr": "Embeddings NLP dans PostgreSQL 17.",
+          "desc_en": "NLP vector embeddings in PostgreSQL 17."
+        },
+        {
+          "step": "[05]",
+          "label_fr": "Télémétrie & Audits",
+          "label_en": "Telemetry & Audits",
+          "desc_fr": "Suivi ops.pipeline_runs & tests bloquants.",
+          "desc_en": "ops.pipeline_runs tracking & blocking tests."
+        }
+      ]
+    },
+    {
+      "id": "aobtp-vdpa",
+      "badge": "[05]",
+      "category": "ai",
+      "tag_fr": "IA & VEILLE",
+      "tag_en": "AI & MONITORING",
+      "accent": "emerald",
+      "title_fr": "AO-BTP Copilot & VdPA",
+      "title_en": "AO-BTP Copilot & VdPA",
+      "summary_fr": "Copilote IA d'analyse d'appels d'offres BTP & système d'alerte sur les prix agricoles.",
+      "summary_en": "AI copilot for construction tenders & West African agricultural price alerting.",
+      "metric_fr": "Python · LLM Engineering · Extraction documentaire · Collecte automatisée & Alerting",
+      "metric_en": "Python · LLM Engineering · Document Extraction · Automated Scraping & Alerting",
+      "code_url": "https://github.com/AngeloEngineer/AO-BTP-Copilot",
+      "doc_url": "https://github.com/AngeloEngineer/Veille-de-Prix-Agricoles-VdPA-",
+      "pipeline": [
+        {
+          "step": "[01]",
+          "label_fr": "Sources & Dossiers",
+          "label_en": "Sources & Tenders",
+          "desc_fr": "Cahiers des charges BTP & relevés marchés.",
+          "desc_en": "Construction tender PDFs & market price feeds."
+        },
+        {
+          "step": "[02]",
+          "label_fr": "Extraction Python",
+          "label_en": "Python Extraction",
+          "desc_fr": "Parsing structuré et normalisation.",
+          "desc_en": "Structured parsing and normalization."
+        },
+        {
+          "step": "[03]",
+          "label_fr": "Analyse IA / Seuils",
+          "label_en": "AI / Threshold Engine",
+          "desc_fr": "Qualification LLM & détection de hausses.",
+          "desc_en": "LLM qualification & price spike detection."
+        },
+        {
+          "step": "[04]",
+          "label_fr": "Synthèse & Alertes",
+          "label_en": "Synthesis & Alerts",
+          "desc_fr": "Matrices de conformité et signaux précoces.",
+          "desc_en": "Compliance matrices and early warning signals."
+        },
+        {
+          "step": "[05]",
+          "label_fr": "Décision Métier",
+          "label_en": "Business Decision",
+          "desc_fr": "Gain de temps opérationnel mesurable.",
+          "desc_en": "Measurable operational time savings."
+        }
+      ]
+    }
+  ]
+}

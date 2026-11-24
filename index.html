@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tchaa Mèwè Angelo BILAKE | Data Engineer &amp; Expert en Analytics</title>
+  <meta name="description" content="Portfolio de Tchaa Mèwè Angelo BILAKE — Data Engineer & Expert en Analytics · IA & Big Data · Pipelines ELT/Lakehouse, PostgreSQL HA, dbt, BI." />
+  <meta name="theme-color" content="#0056D2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       HEADER / NAVIGATION (DESIGN BORIS KOULEVO + COULEURS PERVENCHE & BLEU ROYAL)
+       ========================================================================== -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="#hero" class="header__brand">
+        <div class="header__logo-box brutalist-border">&lt;/&gt;</div>
+        <div class="header__brand-text">
+          <h2 class="header__title">ANGELO.LAB'S</h2>
+          <div class="header__subtitle">
+            <span id="nav-subtitle-text">Data utile · pipelines · BI</span>
+            <span class="header__subtitle-dot"></span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="header__nav" aria-label="Navigation principale">
+        <a href="#data-lab" class="header__link" data-i18n="navLab">[01] DATA LAB</a>
+        <a href="#missions" class="header__link" data-i18n="navMissions">[02] MISSIONS</a>
+        <a href="#flagship" class="header__link" data-i18n="navFlagship">[03] ARCHITECTURE</a>
+        <a href="#podiums" class="header__link" data-i18n="navPodiums">[04] PODIUMS &amp; PROFIL</a>
+        <a href="#contact" class="header__link" data-i18n="navContact">[05] CONTACT</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="language-switch brutalist-border" role="group" aria-label="Choisir la langue">
+          <button type="button" class="language-switch__btn active" data-lang-option="fr">FR</button>
+          <span class="language-switch__sep">/</span>
+          <button type="button" class="language-switch__btn" data-lang-option="en">EN</button>
+        </div>
+        <button type="button" class="btn-cv-download brutalist-border brutalist-shadow btn-hover-effect" id="btn-open-id-card" data-i18n="btnIdCard">
+          CARTE &amp; CV
+        </button>
+        <a href="#contact" class="btn-terminal-trigger brutalist-border brutalist-shadow btn-hover-effect">
+          &gt; CONTACT
+        </a>
+      </div>
+
+      <button type="button" class="header__menu-btn brutalist-border brutalist-shadow" id="mobile-menu-toggle" aria-label="Menu">
+        <span>MENU</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Tiroir mobile -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-drawer__tools">
+      <div class="language-switch brutalist-border" role="group" aria-label="Choisir la langue">
+        <button type="button" class="language-switch__btn active" data-lang-option="fr">FR</button>
+        <span class="language-switch__sep">/</span>
+        <button type="button" class="language-switch__btn" data-lang-option="en">EN</button>
+      </div>
+      <button type="button" class="btn-cv-download brutalist-border" id="btn-open-id-card-mobile">
+        CARTE &amp; CV
+      </button>
+    </div>
+    <a href="#data-lab" class="mobile-nav-drawer__link">[01] DATA LAB</a>
+    <a href="#missions" class="mobile-nav-drawer__link">[02] MISSIONS &amp; PIPELINES</a>
+    <a href="#flagship" class="mobile-nav-drawer__link">[03] ARCHITECTURE SIKAPAY</a>
+    <a href="#podiums" class="mobile-nav-drawer__link">[04] PODIUMS &amp; PROFIL</a>
+    <a href="#contact" class="mobile-nav-drawer__link">[05] CONTACT</a>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTAINER
+       ========================================================================== -->
+  <main class="container">
+
+    <!-- ========================================================================
+         HERO SECTION (STRUCTURE BORIS KOULEVO + COULEURS PERVENCHE & BLEU ROYAL)
+         ======================================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero__left">
+        <div class="hero__status-pill brutalist-border brutalist-shadow">
+          <span class="header__subtitle-dot"></span>
+          <span id="hero-status-text">Lomé, Togo (GMT) · Disponible pour missions Data &amp; BI</span>
+        </div>
+
+        <h1 class="hero__title">
+          TCHAA MÈWÈ<br />
+          ANGELO <span class="hero__title-accent">BILAKE</span>
+        </h1>
+
+        <div class="hero__role">
+          <span id="hero-role-text">Data Engineer &amp; Expert en Analytics</span>
+          <span class="hero__role-cursor"></span>
+        </div>
+
+        <div class="hero__divider"></div>
+
+        <p class="hero__desc" id="hero-desc-text">
+          Je conçois des pipelines ETL/ELT robustes, des entrepôts de données décisionnels (PostgreSQL HA, DuckDB, Parquet, dbt) et des tableaux de bord qui transforment les données brutes en leviers de décision.
+        </p>
+
+        <div class="hero__quick-metrics">
+          <div class="hero__metric-card">
+            <div class="hero__metric-val">5+</div>
+            <div class="hero__metric-lbl" id="metric-lbl-1">SYSTÈMES LIVRÉS</div>
+          </div>
+          <div class="hero__metric-card">
+            <div class="hero__metric-val">2e &amp; 3e</div>
+            <div class="hero__metric-lbl" id="metric-lbl-2">PODIUMS NATIONAUX</div>
+          </div>
+          <div class="hero__metric-card">
+            <div class="hero__metric-val">1,7M+</div>
+            <div class="hero__metric-lbl" id="metric-lbl-3">LIGNES AUDITÉES</div>
+          </div>
+        </div>
+
+        <div class="hero__ctas">
+          <a href="#missions" class="hero__cta-primary brutalist-border brutalist-shadow btn-hover-effect">
+            <span id="cta-primary-text">Inspecter les pipelines</span> &rarr;
+          </a>
+          <a href="#data-lab" class="hero__cta-secondary brutalist-border brutalist-shadow btn-hover-effect">
+            <span id="cta-secondary-text">Explorer le Data Lab</span>
+          </a>
+          <button type="button" class="hero__cta-secondary hero__cta-gold brutalist-border brutalist-shadow btn-hover-effect" id="btn-hero-id-card">
+            <span id="cta-card-text">Fiche d'identité Data</span>
+          </button>
+        </div>
+
+        <!-- Navigation radiale mobile (identique au pattern Boris Koulevo) -->
+        <div class="hero__mobile-menu" aria-label="Accès rapide mobile">
+          <svg class="mobile-lab-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path class="mobile-lab-line" d="M25 22 L50 50 L75 22" />
+            <path class="mobile-lab-line" d="M25 78 L50 50 L75 78" />
+          </svg>
+          <div class="mobile-lab-core">
+            ANGELO<br />LAB'S
+          </div>
+          <a href="#data-lab" class="mobile-menu-btn--node mobile-menu-btn--tl">
+            <span>[01] Data Lab</span><span>&rarr;</span>
+          </a>
+          <a href="#missions" class="mobile-menu-btn--node mobile-menu-btn--tr">
+            <span>[02] Pipelines</span><span>&rarr;</span>
+          </a>
+          <a href="#flagship" class="mobile-menu-btn--node mobile-menu-btn--bl">
+            <span>[03] SikaPay</span><span>&rarr;</span>
+          </a>
+          <a href="#podiums" class="mobile-menu-btn--node mobile-menu-btn--br">
+            <span>[04] Podiums</span><span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right Column: Interactive System Lab Board -->
+      <div class="hero__right">
+        <div class="lab-board">
+          <div class="lab-board__corner lab-board__corner--tl"></div>
+          <div class="lab-board__corner lab-board__corner--tr"></div>
+          <div class="lab-board__corner lab-board__corner--bl"></div>
+          <div class="lab-board__corner lab-board__corner--br"></div>
+
+          <div class="lab-board__header-bar">
+            <span>SYS://ANGELO.LAB'S/V2.1</span>
+            <div class="lab-board__dots">
+              <span class="lab-board__dot lab-board__dot--royal"></span>
+              <span class="lab-board__dot lab-board__dot--gold"></span>
+              <span class="lab-board__dot lab-board__dot--emerald"></span>
+            </div>
+          </div>
+
+          <div class="agent-map">
+            <svg class="agent-map__connections" viewBox="0 0 700 470" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M 185 235 L 252 235" stroke="#0056D2" stroke-width="2" stroke-dasharray="4,4" fill="none" />
+              <line x1="329" y1="235" x2="329" y2="75" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="4,4" />
+              <line x1="329" y1="235" x2="329" y2="395" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="4,4" />
+              <path d="M 405 235 L 495 235" stroke="#0056D2" stroke-width="2" stroke-dasharray="4,4" fill="none" />
+              <path d="M 405 235 L 450 235 L 450 100 L 495 100" stroke="#0E9F6E" stroke-width="1.8" stroke-dasharray="4,4" fill="none" />
+              <path d="M 405 235 L 450 235 L 450 365 L 495 365" stroke="#C9971C" stroke-width="1.8" stroke-dasharray="4,4" fill="none" />
+            </svg>
+
+            <!-- Paquets CSS offset-path animés -->
+            <span class="agent-map__packet" style="offset-path: path('M 185 235 L 252 235'); background: #0056D2;"></span>
+            <span class="agent-map__packet" style="offset-path: path('M 329 235 L 329 75'); background: #F6C453; animation-delay: 0.6s;"></span>
+            <span class="agent-map__packet" style="offset-path: path('M 329 235 L 329 395'); background: #0E9F6E; animation-delay: 1.1s;"></span>
+            <span class="agent-map__packet" style="offset-path: path('M 405 235 L 495 235'); background: #0056D2; animation-delay: 1.5s;"></span>
+            <span class="agent-map__packet" style="offset-path: path('M 405 235 L 450 235 L 450 100 L 495 100'); background: #0E9F6E; animation-delay: 2.0s;"></span>
+
+            <!-- Noeud Entrée -->
+            <div class="agent-node" style="top: 41%; left: 1.5%; width: 25.5%;">
+              <span class="agent-node__badge">[IN]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-in-lbl">Flux Bruts &amp; Terrain</span>
+                  <span class="agent-node__desc" id="hero-node-in-desc">OLTP, IoT, CSV/ZIP, API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Noeud Central avec la vraie photo d'Angelo -->
+            <div class="agent-node__center" style="left: 47%; width: 22%;">
+              <div class="agent-node__center-avatar">
+                <img src="photo.jpg" alt="Tchaa Mèwè Angelo BILAKE" />
+              </div>
+              <h4 class="agent-node__center-title">ANGELO.LAB'S</h4>
+              <div class="agent-node__center-sub">ELT · Lakehouse · BI</div>
+              <div class="agent-node__center-dots">
+                <span class="agent-node__center-dot"></span>
+                <span class="agent-node__center-dot"></span>
+                <span class="agent-node__center-dot"></span>
+              </div>
+            </div>
+
+            <!-- Noeud Haut : Gouvernance & DLP -->
+            <div class="agent-node agent-node--gold" style="top: 3.5%; left: 34%; width: 26%;">
+              <span class="agent-node__badge">[01]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-gov-lbl">Gouvernance &amp; DLP</span>
+                  <span class="agent-node__desc" id="hero-node-gov-desc">Qualité, PII, Idempotence</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Noeud Bas : Observabilité & Audits -->
+            <div class="agent-node agent-node--royal" style="top: 80%; left: 34%; width: 26%;">
+              <span class="agent-node__badge">[02]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-obs-lbl">Observabilité &amp; SLA</span>
+                  <span class="agent-node__desc" id="hero-node-obs-desc">Grafana, CI/CD, Audits</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sortie 1 : DWH & PostgreSQL HA -->
+            <div class="agent-node agent-node--emerald" style="top: 13%; left: 70.5%; width: 28%;">
+              <span class="agent-node__badge">[OUT]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-out1-lbl">Lakehouse &amp; PG16 HA</span>
+                  <span class="agent-node__desc">DuckDB, Parquet, Patroni</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sortie 2 : Modélisation dbt & Airflow -->
+            <div class="agent-node agent-node--royal" style="top: 41%; left: 70.5%; width: 28%;">
+              <span class="agent-node__badge">[OUT]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-out2-lbl">Analytics Engineering</span>
+                  <span class="agent-node__desc">dbt, Airflow, Schéma Étoile</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sortie 3 : BI Décisionnelle & IA -->
+            <div class="agent-node agent-node--gold" style="top: 69%; left: 70.5%; width: 28%;">
+              <span class="agent-node__badge">[OUT]</span>
+              <div class="agent-node__content">
+                <span class="agent-node__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </span>
+                <div>
+                  <span class="agent-node__label" id="hero-node-out3-lbl">BI Décisionnelle &amp; IA</span>
+                  <span class="agent-node__desc">Power BI, Metabase, NLP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION [01] DATA & AI ENGINEERING LAB (PATTERN AGENTIC LAB DE BORIS)
+         ======================================================================== -->
+    <section class="agentic-lab" id="data-lab">
+      <div class="agentic-lab__layout">
+        <!-- Colonne gauche : Légende interactive synchronisée -->
+        <div class="agentic-lab__info">
+          <div class="section-header">
+            <div class="section-header__top">
+              <span class="section-header__badge">[01]</span>
+              <span class="section-header__kicker" id="lab-kicker">ARCHITECTURE DE BOUT EN BOUT</span>
+            </div>
+            <h2 class="section-header__title" id="lab-title">DATA &amp; AI LAB</h2>
+            <p class="section-header__desc" id="lab-subtitle">Collecter. Fiabiliser. Modéliser. Éclairer.</p>
+          </div>
+
+          <p class="agentic-lab__desc" id="lab-desc">
+            Mon écosystème d'ingénierie des données : chaque brique relie la collecte brute (OLTP, capteurs IoT, archives massives) à la décision métier via des pipelines testés, idempotents et gouvernés.
+          </p>
+
+          <div class="agentic-legend" role="list" aria-label="Composants de l'écosystème Data Lab">
+            <h4 class="agentic-legend__title" id="legend-header">ÉCOSYSTÈME TECHNIQUE (SURVOLEZ OU CLIQUEZ)</h4>
+
+            <div class="agentic-legend__item active" data-target="node-oltp" data-detail="Sources transactionnelles OLTP 3NF (PostgreSQL, SQL Server, Oracle) et flux IoT industriels (47 capteurs).">
+              <span class="agentic-legend__badge">[01]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Bases OLTP &amp; Capteurs IoT</span>
+                <span class="agentic-legend__desc">PostgreSQL, SQL Server, flux temps réel</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-files" data-detail="Ingestion streaming out-of-core d'archives ZIP/CSV massives (+500k plaintes CFPB, 1,7M+ transactions Datatour) sans saturer la RAM.">
+              <span class="agentic-legend__badge">[02]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Fichiers &amp; Archives Massives</span>
+                <span class="agentic-legend__desc">CSV, ZIP, PDF BTP, recensement RGPH</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-apis" data-detail="Collecte automatisée de prix agricoles (VdPA) et connecteurs API REST avec gestion des reprises.">
+              <span class="agentic-legend__badge">[03]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">APIs &amp; Veille Automatisée</span>
+                <span class="agentic-legend__desc">Collecte web, webhooks, alerting</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-storage" data-detail="Stockage hybride haute performance : Parquet compressé Zstd partitionné Hive, DuckDB analytique et cluster PostgreSQL 16 HA (Patroni + etcd).">
+              <span class="agentic-legend__badge">[04]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Lakehouse &amp; Stockage HA</span>
+                <span class="agentic-legend__desc">Parquet Zstd, DuckDB, Patroni PG16</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-elt" data-detail="Orchestration Apache Airflow (CeleryExecutor) et transformations vectorisées Polars / PyArrow / PySpark.">
+              <span class="agentic-legend__badge">[05]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Orchestration ELT &amp; Streaming</span>
+                <span class="agentic-legend__desc">Airflow, Polars, PyArrow, PySpark</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-dbt" data-detail="Modélisation dimensionnelle Kimball (Schéma en Étoile) et Architecture Médaille (Bronze/Silver/Gold) avec dbt.">
+              <span class="agentic-legend__badge">[06]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Analytics Engineering (dbt)</span>
+                <span class="agentic-legend__desc">Schéma en Étoile, Médaille, SQL avancé</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-dlp" data-detail="Pseudonymisation DLP/PII, swaps atomiques idempotents (.staging), assertions mathématiques et 35+ tests unitaires CI/CD.">
+              <span class="agentic-legend__badge">[07]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Gouvernance DLP &amp; Qualité</span>
+                <span class="agentic-legend__desc">PII, Idempotence, tests bloquants</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-ml" data-detail="Workflows analytiques multimodaux (texte, tabulaire, vision OpenCV), Machine Learning (Scikit-learn) et indexation vectorielle NLP sous pgvector.">
+              <span class="agentic-legend__badge">[08]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">IA, NLP &amp; Analyse Multimodale</span>
+                <span class="agentic-legend__desc">pgvector, Scikit-learn, OpenCV, LLM</span>
+              </span>
+            </div>
+
+            <div class="agentic-legend__item" data-target="node-bi-out" data-detail="Restitution exécutive : tableaux de bord Power BI (16 mesures DAX), Metabase, applications Streamlit et monitoring Grafana.">
+              <span class="agentic-legend__badge">[OUT]</span>
+              <span class="agentic-legend__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </span>
+              <span class="agentic-legend__text">
+                <span class="agentic-legend__label">Décisionnel BI &amp; Produits</span>
+                <span class="agentic-legend__desc">Power BI (DAX), Metabase, Streamlit</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonne droite : Graphe interactif Desktop -->
+        <div class="agentic-lab__visual">
+          <div class="lab-board">
+            <div class="lab-board__corner lab-board__corner--tl"></div>
+            <div class="lab-board__corner lab-board__corner--tr"></div>
+            <div class="lab-board__corner lab-board__corner--bl"></div>
+            <div class="lab-board__corner lab-board__corner--br"></div>
+
+            <div class="lab-board__header-bar">
+              <span>PIPELINE://END-TO-END.ARCHITECTURE.MAP</span>
+              <span>STATUS: <strong style="color: var(--emerald);">HEALTHY (SLA 99.9%)</strong></span>
+            </div>
+
+            <div class="agent-map">
+              <svg class="agent-map__connections" viewBox="0 0 700 470" preserveAspectRatio="none">
+                <!-- Entrées -> Coeur ELT -->
+                <path d="M 165 65 L 215 65 L 215 235 L 250 235" stroke="#0056D2" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 165 235 L 250 235" stroke="#0056D2" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 165 405 L 215 405 L 215 235 L 250 235" stroke="#0056D2" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <!-- Coeur -> Stockage (Haut) & ML (Bas) -->
+                <line x1="305" y1="235" x2="305" y2="75" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="3,3" />
+                <line x1="305" y1="235" x2="305" y2="395" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="3,3" />
+                <!-- Coeur -> Modules Droite -->
+                <path d="M 365 235 L 405 235" stroke="#0056D2" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 365 235 L 390 235 L 390 110 L 405 110" stroke="#0E9F6E" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 365 235 L 390 235 L 390 360 L 405 360" stroke="#C9971C" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <!-- Modules Droite -> Sortie BI -->
+                <path d="M 555 110 L 570 110 L 570 235 L 580 235" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 555 235 L 580 235" stroke="#0056D2" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+                <path d="M 555 360 L 570 360 L 570 235 L 580 235" stroke="#1A1A1A" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+              </svg>
+
+              <!-- Paquets animés -->
+              <span class="agent-map__packet" style="offset-path: path('M 165 65 L 215 65 L 215 235 L 250 235'); background: #0056D2;"></span>
+              <span class="agent-map__packet" style="offset-path: path('M 165 235 L 250 235'); background: #0E9F6E; animation-delay: 0.4s;"></span>
+              <span class="agent-map__packet" style="offset-path: path('M 165 405 L 215 405 L 215 235 L 250 235'); background: #F6C453; animation-delay: 0.8s;"></span>
+              <span class="agent-map__packet" style="offset-path: path('M 365 235 L 405 235'); background: #0056D2; animation-delay: 1.2s;"></span>
+              <span class="agent-map__packet" style="offset-path: path('M 555 235 L 580 235'); background: #0E9F6E; animation-delay: 1.8s;"></span>
+
+              <!-- Colonne Entrées -->
+              <div class="agent-node highlighted" style="top: 6%; left: 1%; width: 22.5%;" id="node-oltp">
+                <span class="agent-node__badge">[01]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">OLTP &amp; IoT</span>
+                    <span class="agent-node__desc">PG, SQL Server, 47 capteurs</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node" style="top: 41%; left: 1%; width: 22.5%;" id="node-files">
+                <span class="agent-node__badge">[02]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">Fichiers &amp; ZIP</span>
+                    <span class="agent-node__desc">+500k CFPB, 1,7M tx</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node" style="top: 76%; left: 1%; width: 22.5%;" id="node-apis">
+                <span class="agent-node__badge">[03]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">APIs &amp; Veille</span>
+                    <span class="agent-node__desc">Flux VdPA &amp; Web</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coeur Central -->
+              <div class="agent-node__center" style="left: 39.5%; width: 20%;" id="node-core-engine">
+                <div class="agent-node__center-avatar">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h4 class="agent-node__center-title">Moteur Data &amp; ELT</h4>
+                <div class="agent-node__center-sub">Architecture &amp; Contrats</div>
+                <div class="agent-node__center-dots">
+                  <span class="agent-node__center-dot"></span>
+                  <span class="agent-node__center-dot"></span>
+                  <span class="agent-node__center-dot"></span>
+                </div>
+              </div>
+
+              <!-- Noeuds Orbitaux -->
+              <div class="agent-node agent-node--emerald" style="top: 3.5%; left: 28%; width: 23%;" id="node-storage">
+                <span class="agent-node__badge">[04]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">Lakehouse &amp; HA</span>
+                    <span class="agent-node__desc">Parquet Zstd, Patroni</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node agent-node--gold" style="top: 80%; left: 28%; width: 23%;" id="node-ml">
+                <span class="agent-node__badge">[08]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">IA, NLP &amp; Vision</span>
+                    <span class="agent-node__desc">pgvector, Scikit-learn, LLM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node agent-node--royal" style="top: 15%; left: 55.5%; width: 22.5%;" id="node-elt">
+                <span class="agent-node__badge">[05]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">Airflow &amp; Polars</span>
+                    <span class="agent-node__desc">Streaming Out-of-Core</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node agent-node--emerald" style="top: 41%; left: 55.5%; width: 22.5%;" id="node-dbt">
+                <span class="agent-node__badge">[06]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">dbt &amp; Kimball</span>
+                    <span class="agent-node__desc">Étoile &amp; Médaille</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="agent-node agent-node--gold" style="top: 68%; left: 55.5%; width: 22.5%;" id="node-dlp">
+                <span class="agent-node__badge">[07]</span>
+                <div class="agent-node__content">
+                  <span class="agent-node__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </span>
+                  <div>
+                    <span class="agent-node__label">DLP &amp; CI/CD</span>
+                    <span class="agent-node__desc">PII, 35+ tests, Audits</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sortie Finale -->
+              <div class="agent-node agent-node--royal" style="top: 41%; left: 81.5%; width: 17%;" id="node-bi-out">
+                <span class="agent-node__badge">[OUT]</span>
+                <div class="agent-node__content">
+                  <div>
+                    <span class="agent-node__label">BI &amp; IA</span>
+                    <span class="agent-node__desc">Power BI, Metabase, App</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barre d'inspection dynamique au survol/clic -->
+          <div class="lab-inspector-callout">
+            <span class="lab-inspector-callout__tag" id="lab-callout-badge">MODULE [01]</span>
+            <span id="lab-callout-text">Sources transactionnelles OLTP 3NF (PostgreSQL, SQL Server, Oracle) et flux IoT industriels (47 capteurs).</span>
+          </div>
+        </div>
+
+        <!-- Flux vertical mobile (visible sur mobile uniquement) -->
+        <div class="agentic-lab__mobile-flow">
+          <div class="agent-mobile-card agent-mobile-card--royal">
+            <strong>[01-03] ENTRÉES : OLTP, IOT, ZIP &amp; APIS</strong>
+            <p>PostgreSQL, SQL Server, 47 capteurs IoT, archives CFPB (+500k) et flux VdPA.</p>
+          </div>
+          <div class="agent-mobile-card agent-mobile-card--core">
+            <strong>[04-05] STOCKAGE HA &amp; ORCHESTRATION ELT</strong>
+            <p>Cluster PostgreSQL 16 Patroni (failover &lt; 30s), DuckDB, Parquet Zstd, Airflow &amp; Polars.</p>
+          </div>
+          <div class="agent-mobile-card agent-mobile-card--emerald">
+            <strong>[06-07] MODÉLISATION DBT, DLP &amp; TESTS CI/CD</strong>
+            <p>Architecture Médaille, Schéma en Étoile Kimball, nettoyage PII et assertions bloquantes.</p>
+          </div>
+          <div class="agent-mobile-card agent-mobile-card--gold">
+            <strong>[08-OUT] IA MULTIMODALE, NLP &amp; BI DÉCISIONNELLE</strong>
+            <p>Power BI (16 mesures DAX), Metabase, Streamlit, pgvector et Scikit-learn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION [02] MISSIONS & ARCHITECTURES (MASTER-DETAIL PIPELINE 5 ÉTAPES)
+         ======================================================================== -->
+    <section class="missions" id="missions">
+      <div class="section-header">
+        <div class="section-header__top">
+          <span class="section-header__badge">[02]</span>
+          <span class="section-header__kicker" id="missions-kicker">INGÉNIERIE APPLIQUÉE &amp; PREUVES DE TRAVAIL</span>
+        </div>
+        <h2 class="section-header__title" id="missions-title">ARCHITECTURES &amp; PROJETS</h2>
+        <p class="section-header__desc" id="missions-subtitle">
+          Sélectionnez un projet pour inspecter son pipeline technique en 5 étapes, ses garanties de qualité et son dépôt GitHub.
+        </p>
+      </div>
+
+      <!-- Filtres par axe -->
+      <div class="missions__filters" role="group" aria-label="Filtrer les projets">
+        <button type="button" class="missions__filter-btn active" data-filter="all" id="filter-all">Tous les systèmes (5)</button>
+        <button type="button" class="missions__filter-btn" data-filter="analytics" id="filter-analytics">Analytics &amp; BI (2)</button>
+        <button type="button" class="missions__filter-btn" data-filter="data" id="filter-data">Data Eng. &amp; DBA HA (1)</button>
+        <button type="button" class="missions__filter-btn" data-filter="ai" id="filter-ai">Lakehouse NLP &amp; IA (2)</button>
+      </div>
+
+      <!-- Grille de sélection Master -->
+      <div class="missions__grid" id="missions-grid" role="tablist" aria-label="Sélection des missions Data"></div>
+
+      <!-- Panneau d'inspection Detail (Pipeline en 5 étapes) -->
+      <div class="missions__detail brutalist-border" id="missions-detail"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION [03] FOCUS ARCHITECTURE PHARE (PATTERN PASS ATS DE BORIS)
+         ======================================================================== -->
+    <section class="flagship" id="flagship">
+      <div class="flagship__layout">
+        <div class="flagship__info">
+          <div class="section-header">
+            <div class="section-header__top">
+              <span class="section-header__badge">[03]</span>
+              <span class="section-header__kicker" id="flagship-kicker">FOCUS ENTREPÔT MULTI-PAYS</span>
+            </div>
+            <h2 class="section-header__title">SIKAPAY ANALYTICS</h2>
+            <p class="section-header__desc" id="flagship-subtitle">Data Warehouse Mobile Money UEMOA (4 pays)</p>
+          </div>
+
+          <p class="flagship__desc" id="flagship-desc">
+            Conception complète d'un entrepôt décisionnel Mobile Money couvrant le Togo, le Bénin, la Côte d'Ivoire et le Sénégal : passage d'une base transactionnelle normalisée 3NF (11 tables, +60 000 transactions) à un schéma en étoile Kimball testé sous dbt.
+          </p>
+
+          <div class="flagship__proof-list">
+            <div class="flagship__proof-item">
+              <span style="color: var(--royal);">[3NF &rarr; KIMBALL]</span>
+              <span id="flagship-proof-1">11 tables OLTP converties en faits &amp; dimensions analytiques</span>
+            </div>
+            <div class="flagship__proof-item">
+              <span style="color: var(--emerald);">[CHAOS TESTING]</span>
+              <span id="flagship-proof-2">Injection contrôlée d'anomalies (doublons, nulls, formats)</span>
+            </div>
+            <div class="flagship__proof-item">
+              <span style="color: var(--gold);">[ORCHESTRATION]</span>
+              <span id="flagship-proof-3">DAGs Apache Airflow (CeleryExecutor) &amp; BI Metabase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flagship__visual">
+          <div class="flagship__pipeline-board brutalist-border">
+            <div class="lab-board__corner lab-board__corner--tl"></div>
+            <div class="lab-board__corner lab-board__corner--tr"></div>
+            <div class="lab-board__corner lab-board__corner--bl"></div>
+            <div class="lab-board__corner lab-board__corner--br"></div>
+
+            <a href="https://github.com/AngeloEngineer/sikapay-analytics" target="_blank" rel="noopener noreferrer" class="flagship__live-link brutalist-border btn-hover-effect" id="flagship-repo-link">
+              Dépôt GitHub &rarr;
+            </a>
+
+            <h4 class="pipeline-title" id="flagship-flow-title">FLUX D'ARCHITECTURE END-TO-END</h4>
+
+            <div class="pipeline-flow" style="margin-top: 1.1rem;">
+              <div class="pipeline-step">
+                <div class="pipeline-step__top">
+                  <span class="pipeline-step__num">[01]</span>
+                </div>
+                <div class="pipeline-step__label" id="fp-step1-lbl">OLTP 3NF (11 tables)</div>
+                <div class="pipeline-step__desc" id="fp-step1-desc">+60k transactions Mobile Money UEMOA.</div>
+              </div>
+
+              <div class="pipeline-arrow">&rarr;</div>
+
+              <div class="pipeline-step">
+                <div class="pipeline-step__top">
+                  <span class="pipeline-step__num">[02]</span>
+                </div>
+                <div class="pipeline-step__label" id="fp-step2-lbl">Airflow Celery</div>
+                <div class="pipeline-step__desc" id="fp-step2-desc">Extraction &amp; chargement planifiés.</div>
+              </div>
+
+              <div class="pipeline-arrow">&rarr;</div>
+
+              <div class="pipeline-step pipeline-step--core">
+                <div class="pipeline-step__top">
+                  <span class="pipeline-step__num">[03] MOTEUR DBT</span>
+                </div>
+                <div class="pipeline-step__label" id="fp-step3-lbl">Qualité &amp; Nettoyage</div>
+                <div class="pipeline-step__desc" id="fp-step3-desc">Filtrage doublons, tests dbt &amp; intégrité.</div>
+              </div>
+
+              <div class="pipeline-arrow">&rarr;</div>
+
+              <div class="pipeline-step">
+                <div class="pipeline-step__top">
+                  <span class="pipeline-step__num">[04]</span>
+                </div>
+                <div class="pipeline-step__label" id="fp-step4-lbl">Schéma en Étoile</div>
+                <div class="pipeline-step__desc" id="fp-step4-desc">Tables de faits &amp; dimensions Kimball.</div>
+              </div>
+
+              <div class="pipeline-arrow">&rarr;</div>
+
+              <div class="pipeline-step">
+                <div class="pipeline-step__top">
+                  <span class="pipeline-step__num">[05]</span>
+                </div>
+                <div class="pipeline-step__label" id="fp-step5-lbl">BI Metabase</div>
+                <div class="pipeline-step__desc" id="fp-step5-desc">Pilotage multi-pays &amp; commissions.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION [04] PODIUMS, EXPERTISE & PROFIL (AVEC PHOTO.JPG D'ANGELO)
+         ======================================================================== -->
+    <section class="community-proof-section" id="podiums">
+      <div class="section-header">
+        <div class="section-header__top">
+          <span class="section-header__badge">[04]</span>
+          <span class="section-header__kicker" id="podiums-kicker">IMPACT VÉRIFIÉ &amp; PARCOURS</span>
+        </div>
+        <h2 class="section-header__title" id="podiums-title">PODIUMS, EXPERTISE &amp; PROFIL</h2>
+        <p class="section-header__desc" id="podiums-subtitle">
+          Rigueur scientifique, pensée scalable et résultats prouvés en compétition nationale comme en environnement métier.
+        </p>
+      </div>
+
+      <div class="community-proof">
+        <!-- Dossier Profil avec photo.jpg issue de portfeuille.zip -->
+        <div class="profile-dossier">
+          <div>
+            <div class="profile-dossier__top">
+              <div class="profile-dossier__photo">
+                <img src="photo.jpg" alt="Photo de Tchaa Mèwè Angelo BILAKE" />
+              </div>
+              <div>
+                <h3 class="profile-dossier__name">Tchaa Mèwè Angelo BILAKE</h3>
+                <div class="profile-dossier__school" id="profile-school">ENP Lomé (ex-EPL) · IA &amp; Big Data</div>
+                <div class="profile-dossier__school" style="color: var(--emerald);" id="profile-langs">FR (Maternel) · EN (Professionnel)</div>
+              </div>
+            </div>
+
+            <p class="profile-dossier__bio" style="margin-top: 0.9rem;" id="profile-bio">
+              Formé en Intelligence Artificielle &amp; Big Data à l'École Nationale Polytechnique de Lomé (Délégué de promotion), je couvre tout le cycle de vie de la donnée avec une exigence d'architecture Senior : idempotence, gouvernance DLP/PII et observabilité.
+            </p>
+          </div>
+
+          <div class="profile-dossier__axes">
+            <div class="profile-axis">
+              <strong>[AXE 01] Analytics Engineering</strong>
+              <span>dbt · SQL avancé · Schéma en Étoile · Merise/UML · BigQuery · Metabase</span>
+            </div>
+            <div class="profile-axis">
+              <strong>[AXE 02] Data Engineering &amp; DBA HA</strong>
+              <span>Airflow · DuckDB · Parquet · Polars · PySpark · PostgreSQL 16 HA (Patroni) · Docker</span>
+            </div>
+            <div class="profile-axis">
+              <strong>[AXE 03] BI &amp; Data Science Multimodale</strong>
+              <span>Power BI (DAX) · Scikit-learn · NLP (pgvector) · OpenCV · Statistiques &amp; Séries temporelles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Cartes Néo-Brutalistes d'impact (Pattern Boris Community Grid) -->
+        <div class="community-proof__grid">
+          <div class="community-card community-card--gold brutalist-border">
+            <span class="community-card__badge">[01]</span>
+            <div>
+              <div class="community-card__metric">2e PLACE</div>
+              <span class="community-card__metric-label" id="podium1-sub">NATIONALE AU TOGO · DATATOUR 2026</span>
+            </div>
+            <h3 class="community-card__title" id="podium1-title">COMPÉTITION PANAFRICAINE DATA SCIENCE</h3>
+            <p class="community-card__desc" id="podium1-desc">
+              Team Leader · Audit, nettoyage et modélisation de plus de 1,7 million de transactions avec isolation stricte des anomalies pour garantir la fiabilité du pipeline.
+            </p>
+          </div>
+
+          <div class="community-card community-card--royal brutalist-border">
+            <span class="community-card__badge">[02]</span>
+            <div>
+              <div class="community-card__metric">3e PLACE</div>
+              <span class="community-card__metric-label" id="podium2-sub">TOGO AI LAB DATA CHALLENGE</span>
+            </div>
+            <h3 class="community-card__title" id="podium2-title">DÉMOGRAPHIE RGPH &amp; SERVICES PUBLICS</h3>
+            <p class="community-card__desc" id="podium2-desc">
+              Pipeline ETL automatisé (8 tables vérifiées par assertions mathématiques sur 39 préfectures, 117 communes et 8M+ habitants) + dashboard Power BI (16 mesures DAX).
+            </p>
+          </div>
+
+          <div class="community-card community-card--emerald brutalist-border">
+            <span class="community-card__badge">[03]</span>
+            <div>
+              <div class="community-card__metric">500K+</div>
+              <span class="community-card__metric-label" id="podium3-sub">PLAINTES FINANCIÈRES · LAKEHOUSE NLP</span>
+            </div>
+            <h3 class="community-card__title" id="podium3-title">ARCHITECTURE LAKEHOUSE &amp; QUALITÉ CI/CD</h3>
+            <p class="community-card__desc" id="podium3-desc">
+              Ingestion streaming out-of-core (DuckDB, Parquet Zstd, Polars), modélisation dbt (Schéma en Étoile &amp; Médaille), gouvernance DLP/PII et 35+ tests unitaires GitHub Actions.
+            </p>
+          </div>
+
+          <div class="community-card community-card--white brutalist-border">
+            <span class="community-card__badge">[04]</span>
+            <div>
+              <div class="community-card__metric">&lt; 30 SEC</div>
+              <span class="community-card__metric-label" id="podium4-sub">FAILOVER AUTOMATIQUE POSTGRESQL 16</span>
+            </div>
+            <h3 class="community-card__title" id="podium4-title">INGÉNIERIE HAUTE DISPONIBILITÉ &amp; LAKEHOUSE</h3>
+            <p class="community-card__desc" id="podium4-desc">
+              Clusters Patroni + etcd, sauvegardes PITR pgBackRest (RPO &lt; 5 min), ingestion streaming out-of-core Parquet Zstd et tests CI/CD GitHub Actions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION [05] CONTACT & FORMULAIRE FORMSPREE
+         ======================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-cta brutalist-border">
+        <div class="lab-board__corner lab-board__corner--tl"></div>
+        <div class="lab-board__corner lab-board__corner--tr"></div>
+        <div class="lab-board__corner lab-board__corner--bl"></div>
+        <div class="lab-board__corner lab-board__corner--br"></div>
+
+        <div class="contact-cta__layout">
+          <div class="contact-cta__left">
+            <div class="section-header__top">
+              <span class="section-header__badge">[05]</span>
+              <span class="section-header__kicker" id="contact-kicker">COLLABORATION &amp; FREELANCE</span>
+            </div>
+            <h2 class="contact-cta__title" id="contact-title">TRAVAILLONS<br />ENSEMBLE.</h2>
+            <p class="contact-cta__text" id="contact-desc">
+              Vous cherchez un ingénieur capable de structurer vos flux de données, d'automatiser vos pipelines ou de concevoir des tableaux de bord fiables sans jargon inutile ? Contactez-moi directement.
+            </p>
+
+            <div class="contact-cta__buttons">
+              <a href="https://www.linkedin.com/in/tchaa-m%C3%A8w%C3%A8-angelo-bilake-095107354" target="_blank" rel="noopener noreferrer" class="contact-cta__btn contact-cta__btn--royal brutalist-border brutalist-shadow btn-hover-effect">
+                <span>LINKEDIN</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="https://github.com/AngeloEngineer" target="_blank" rel="noopener noreferrer" class="contact-cta__btn brutalist-border brutalist-shadow btn-hover-effect">
+                <span>GITHUB</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="mailto:angelobtma@gmail.com" class="contact-cta__btn contact-cta__btn--gold brutalist-border brutalist-shadow btn-hover-effect">
+                <span>EMAIL DIRECT</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="tel:+22893106665" class="contact-cta__btn brutalist-border brutalist-shadow btn-hover-effect">
+                <span>+228 93 10 66 65</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-cta__right">
+            <form class="brutalist-form" id="contact-form" action="https://formspree.io/f/xpwdgkpb" method="POST">
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="_subject" value="Nouveau message depuis ANGELO.LAB'S" />
+              <div class="brutalist-form__title">
+                <span id="form-header-title">&gt; ENVOYER UN MESSAGE DIRECT</span>
+                <span>[FORMSPREE]</span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" id="lbl-name">NOM COMPLET</label>
+                  <input type="text" id="name" name="name" required placeholder="Votre nom" />
+                </div>
+                <div class="form-group">
+                  <label for="email" id="lbl-email">EMAIL</label>
+                  <input type="email" id="email" name="email" required placeholder="vous@entreprise.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject" id="lbl-subject">SUJET / MISSION</label>
+                <input type="text" id="subject" name="subject" placeholder="Pipeline ELT / Entrepôt dbt / Dashboard BI / Opportunité" />
+              </div>
+              <div class="form-group">
+                <label for="message" id="lbl-message">DÉTAILS DU BESOIN</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Décrivez votre projet, vos sources de données ou votre besoin..."></textarea>
+              </div>
+              <button type="submit" class="form-submit-btn brutalist-border brutalist-shadow btn-hover-effect" id="submit-btn">
+                <span id="btn-submit-text">TRANSMETTRE LE MESSAGE</span> &rarr;
+              </button>
+              <div class="form-status-msg" id="form-status-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer-desktop">
+        <div>
+          &copy; 2026 Tchaa Mèwè Angelo BILAKE · Lomé, Togo (GMT)
+        </div>
+        <div>
+          CHARTE PERVENCHE &amp; BLEU ROYAL · ARCHITECTURE LAB
+          <span class="footer-desktop__squares">
+            <span class="sq--royal"></span>
+            <span class="sq--gold"></span>
+            <span class="sq--emerald"></span>
+          </span>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODAL INTERACTIF (INSPECTION PIPELINE MOBILE & FICHE D'IDENTITÉ / CV)
+       ========================================================================== -->
+  <div class="mobile-dialog-overlay" id="mobile-mission-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="mobile-dialog brutalist-border brutalist-shadow" id="mobile-dialog-content"></div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
