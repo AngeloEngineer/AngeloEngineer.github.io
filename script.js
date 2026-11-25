@@ -245,7 +245,86 @@
         contactTitle: 'TRAVAILLONS<br />ENSEMBLE.',
         contactDesc: 'Vous cherchez un ingénieur capable de structurer vos flux de données, d\'automatiser vos pipelines ou de concevoir des tableaux de bord fiables sans jargon inutile ? Contactez-moi directement.',
         submitBtn: 'TRANSMETTRE LE MESSAGE',
-        sentConfirm: 'Merci ! Votre message est prêt / transmis. Vous pouvez aussi me joindre directement sur angelobtma@gmail.com.'
+        sentConfirm: 'Merci ! Votre message est prêt / transmis. Vous pouvez aussi me joindre directement sur angelobtma@gmail.com.',
+        // Hero lab board nodes
+        heroNodeInLbl: 'Flux Bruts & Terrain',
+        heroNodeGovLbl: 'Gouvernance & DLP',
+        heroNodeObsLbl: 'Observabilité & SLA',
+        heroNodeOut1Lbl: 'Lakehouse & PG16 HA',
+        heroNodeOut2Lbl: 'Analytics Engineering',
+        heroNodeOut3Lbl: 'BI Décisionnelle & IA',
+        // Flagship section
+        flagshipKicker: 'FOCUS ENTREPÔT MULTI-PAYS',
+        flagshipSubtitle: 'Data Warehouse Mobile Money UEMOA (4 pays)',
+        flagshipDesc: 'Conception complète d\'un entrepôt décisionnel Mobile Money couvrant le Togo, le Bénin, la Côte d\'Ivoire et le Sénégal : passage d\'une base transactionnelle normalisée 3NF (11 tables, +60 000 transactions) à un schéma en étoile Kimball testé sous dbt.',
+        flagshipProof1: '11 tables OLTP converties en faits & dimensions analytiques',
+        flagshipProof2: 'Injection contrôlée d\'anomalies (doublons, nulls, formats)',
+        flagshipProof3: 'DAGs Apache Airflow (CeleryExecutor) & BI Metabase',
+        flagshipRepoLink: 'Dépôt GitHub →',
+        flagshipFlowTitle: 'FLUX D\'ARCHITECTURE END-TO-END',
+        fpStep1Lbl: 'OLTP 3NF (11 tables)',
+        fpStep1Desc: '+60k transactions Mobile Money UEMOA.',
+        fpStep2Lbl: 'Airflow Celery',
+        fpStep2Desc: 'Extraction & chargement planifiés.',
+        fpStep3Lbl: 'Qualité & Nettoyage',
+        fpStep3Desc: 'Filtrage doublons, tests dbt & intégrité.',
+        fpStep4Lbl: 'Schéma en Étoile',
+        fpStep4Desc: 'Tables de faits & dimensions Kimball.',
+        fpStep5Lbl: 'BI Metabase',
+        fpStep5Desc: 'Pilotage multi-pays & commissions.',
+        // Podiums section
+        podiumsKicker: 'IMPACT VÉRIFIÉ & PARCOURS',
+        podiumsTitle: 'PODIUMS, EXPERTISE & PROFIL',
+        podiumsSubtitle: 'Rigueur scientifique, pensée scalable et résultats prouvés en compétition nationale comme en environnement métier.',
+        profileSchool: 'ENP Lomé (ex-EPL) · IA & Big Data',
+        profileLangs: 'FR (Maternel) · EN (Professionnel)',
+        profileBio: 'Formé en Intelligence Artificielle & Big Data à l\'École Nationale Polytechnique de Lomé (Délégué de promotion), je couvre tout le cycle de vie de la donnée avec une exigence d\'architecture Senior : idempotence, gouvernance DLP/PII et observabilité.',
+        podium1Sub: 'NATIONALE AU TOGO · DATATOUR 2026',
+        podium1Title: 'COMPÉTITION PANAFRICAINE DATA SCIENCE',
+        podium1Desc: 'Team Leader · Audit, nettoyage et modélisation de plus de 1,7 million de transactions avec isolation stricte des anomalies pour garantir la fiabilité du pipeline.',
+        podium2Sub: 'TOGO AI LAB DATA CHALLENGE',
+        podium2Title: 'DÉMOGRAPHIE RGPH & SERVICES PUBLICS',
+        podium2Desc: 'Pipeline ETL automatisé (8 tables vérifiées par assertions mathématiques sur 39 préfectures, 117 communes et 8M+ habitants) + dashboard Power BI (16 mesures DAX).',
+        podium3Sub: 'PLAINTES FINANCIÈRES · LAKEHOUSE NLP',
+        podium3Title: 'ARCHITECTURE LAKEHOUSE & QUALITÉ CI/CD',
+        podium3Desc: 'Ingestion streaming out-of-core (DuckDB, Parquet Zstd, Polars), modélisation dbt (Schéma en Étoile & Médaille), gouvernance DLP/PII et 35+ tests unitaires GitHub Actions.',
+        podium4Sub: 'FAILOVER AUTOMATIQUE POSTGRESQL 16',
+        podium4Title: 'INGÉNIERIE HAUTE DISPONIBILITÉ & LAKEHOUSE',
+        podium4Desc: 'Clusters Patroni + etcd, sauvegardes PITR pgBackRest (RPO < 5 min), ingestion streaming out-of-core Parquet Zstd et tests CI/CD GitHub Actions.',
+        // Contact section
+        contactKicker: 'COLLABORATION & FREELANCE',
+        formHeaderTitle: '> ENVOYER UN MESSAGE DIRECT',
+        lblName: 'NOM COMPLET',
+        lblEmail: 'EMAIL',
+        lblSubject: 'SUJET / MISSION',
+        lblMessage: 'DÉTAILS DU BESOIN',
+        placeholderName: 'Votre nom',
+        placeholderEmail: 'vous@entreprise.com',
+        placeholderSubject: 'Pipeline ELT / Entrepôt dbt / Dashboard BI / Opportunité',
+        placeholderMessage: 'Décrivez votre projet, vos sources de données ou votre besoin...',
+        // Mobile data lab cards
+        mobileCard1: '[01-03] ENTRÉES : OLTP, IOT, ZIP & APIS',
+        mobileCard1Desc: 'PostgreSQL, SQL Server, 47 capteurs IoT, archives CFPB (+500k) et flux VdPA.',
+        mobileCard2: '[04-05] STOCKAGE HA & ORCHESTRATION ELT',
+        mobileCard2Desc: 'Cluster PostgreSQL 16 Patroni (failover < 30s), DuckDB, Parquet Zstd, Airflow & Polars.',
+        mobileCard3: '[06-07] MODÉLISATION DBT, DLP & TESTS CI/CD',
+        mobileCard3Desc: 'Architecture Médaille, Schéma en Étoile Kimball, nettoyage PII et assertions bloquantes.',
+        mobileCard4: '[08-OUT] IA MULTIMODALE, NLP & BI DÉCISIONNELLE',
+        mobileCard4Desc: 'Power BI (16 mesures DAX), Metabase, Streamlit, pgvector et Scikit-learn.',
+        // Mobile nav links
+        mobileNav1: '[01] DATA LAB',
+        mobileNav2: '[02] MISSIONS & PIPELINES',
+        mobileNav3: '[03] ARCHITECTURE SIKAPAY',
+        mobileNav4: '[04] PODIUMS & PROFIL',
+        mobileNav5: '[05] CONTACT',
+        // Identity card modal
+        idCardStack: '[STACK PRINCIPALE]',
+        idCardDistinctions: '[DISTINCTIONS & EXPÉRIENCE]',
+        idCardStackContent: 'PostgreSQL 16 HA (Patroni) · SQL Server · DuckDB · Parquet Zstd · dbt · Apache Airflow · Polars · Python · Power BI (DAX) · Metabase · Docker · Linux',
+        idCardDistinctionsContent: '• Architectures Data Warehouse & Lakehouse — SikaPay UEMOA, Supply Chain DW & CFPB NLP<br/>• 2e Place Nationale au Togo — Datatour 2026 (1,7M+ transactions)<br/>• 3e Place Nationale — Togo AI Lab Challenge (RGPH 8M+ hab. & Power BI)<br/>• Licence IA & Big Data — École Nationale Polytechnique (ENP Lomé)',
+        idCardCvBtn: 'Recevoir le CV PDF complet →',
+        // Footer
+        footerRight: 'CHARTE PERVENCHE & BLEU ROYAL · ARCHITECTURE LAB',
       },
       en: {
         navSubtitle: 'Useful Data · pipelines · BI',
@@ -284,7 +363,86 @@
         contactTitle: 'LET\'S WORK<br />TOGETHER.',
         contactDesc: 'Looking for an engineer to structure messy data flows, automate pipelines, or build reliable decision dashboards without unnecessary jargon? Reach out directly.',
         submitBtn: 'SEND MESSAGE',
-        sentConfirm: 'Thank you! Your message has been prepared/sent. You can also reach me directly at angelobtma@gmail.com.'
+        sentConfirm: 'Thank you! Your message has been prepared/sent. You can also reach me directly at angelobtma@gmail.com.',
+        // Hero lab board nodes
+        heroNodeInLbl: 'Raw Streams & Field Data',
+        heroNodeGovLbl: 'Governance & DLP',
+        heroNodeObsLbl: 'Observability & SLA',
+        heroNodeOut1Lbl: 'Lakehouse & PG16 HA',
+        heroNodeOut2Lbl: 'Analytics Engineering',
+        heroNodeOut3Lbl: 'Decision BI & AI',
+        // Flagship section
+        flagshipKicker: 'FOCUS — MULTI-COUNTRY WAREHOUSE',
+        flagshipSubtitle: 'Mobile Money Data Warehouse — WAEMU (4 countries)',
+        flagshipDesc: 'Full design of a Mobile Money analytical Data Warehouse covering Togo, Benin, Ivory Coast, and Senegal: migrating from an 11-table 3NF OLTP schema (60,000+ transactions) to a dbt-tested Kimball Star Schema.',
+        flagshipProof1: '11 OLTP tables converted into analytical facts & dimensions',
+        flagshipProof2: 'Controlled anomaly injection (duplicates, nulls, formats)',
+        flagshipProof3: 'Apache Airflow DAGs (CeleryExecutor) & Metabase BI',
+        flagshipRepoLink: 'GitHub Repository →',
+        flagshipFlowTitle: 'END-TO-END ARCHITECTURE FLOW',
+        fpStep1Lbl: '3NF OLTP (11 tables)',
+        fpStep1Desc: '60k+ Mobile Money WAEMU transactions.',
+        fpStep2Lbl: 'Airflow Celery',
+        fpStep2Desc: 'Scheduled extraction & loading.',
+        fpStep3Lbl: 'Quality & Cleaning',
+        fpStep3Desc: 'Duplicate filtering, dbt tests & integrity.',
+        fpStep4Lbl: 'Star Schema',
+        fpStep4Desc: 'Kimball fact & dimension tables.',
+        fpStep5Lbl: 'Metabase BI',
+        fpStep5Desc: 'Multi-country volume & fee dashboards.',
+        // Podiums section
+        podiumsKicker: 'VERIFIED IMPACT & BACKGROUND',
+        podiumsTitle: 'AWARDS, EXPERTISE & PROFILE',
+        podiumsSubtitle: 'Scientific rigor, scalable thinking, and proven results in national competitions and business environments.',
+        profileSchool: 'ENP Lomé (ex-EPL) · AI & Big Data',
+        profileLangs: 'FR (Native) · EN (Professional)',
+        profileBio: 'Trained in Artificial Intelligence & Big Data at the École Nationale Polytechnique de Lomé (Class Representative), I cover the full data lifecycle with senior-level architecture standards: idempotency, DLP/PII governance, and observability.',
+        podium1Sub: 'NATIONAL — TOGO · DATATOUR 2026',
+        podium1Title: 'PAN-AFRICAN DATA SCIENCE COMPETITION',
+        podium1Desc: 'Team Leader · Audit, cleaning, and modeling of 1.7M+ transactions with strict anomaly isolation to guarantee pipeline reliability.',
+        podium2Sub: 'TOGO AI LAB DATA CHALLENGE',
+        podium2Title: 'RGPH DEMOGRAPHICS & PUBLIC SERVICES',
+        podium2Desc: 'Automated ETL pipeline (8 tables verified with mathematical assertions across 39 prefectures, 117 municipalities, 8M+ residents) + Power BI dashboard (16 DAX measures).',
+        podium3Sub: 'FINANCIAL COMPLAINTS · NLP LAKEHOUSE',
+        podium3Title: 'LAKEHOUSE ARCHITECTURE & CI/CD QUALITY',
+        podium3Desc: 'Out-of-core streaming ingestion (DuckDB, Parquet Zstd, Polars), dbt modeling (Star Schema & Medallion), DLP/PII governance, and 35+ GitHub Actions unit tests.',
+        podium4Sub: 'AUTOMATIC FAILOVER — POSTGRESQL 16',
+        podium4Title: 'HIGH-AVAILABILITY ENGINEERING & LAKEHOUSE',
+        podium4Desc: 'Patroni + etcd clusters, pgBackRest PITR backups (RPO < 5 min), out-of-core Parquet Zstd streaming ingestion, and GitHub Actions CI/CD tests.',
+        // Contact section
+        contactKicker: 'COLLABORATION & FREELANCE',
+        formHeaderTitle: '> SEND A DIRECT MESSAGE',
+        lblName: 'FULL NAME',
+        lblEmail: 'EMAIL',
+        lblSubject: 'SUBJECT / PROJECT',
+        lblMessage: 'PROJECT DETAILS',
+        placeholderName: 'Your name',
+        placeholderEmail: 'you@company.com',
+        placeholderSubject: 'ELT Pipeline / dbt Warehouse / BI Dashboard / Opportunity',
+        placeholderMessage: 'Describe your project, data sources, or requirements...',
+        // Mobile data lab cards
+        mobileCard1: '[01-03] INPUTS: OLTP, IOT, ZIP & APIS',
+        mobileCard1Desc: 'PostgreSQL, SQL Server, 47 IoT sensors, CFPB archives (500k+) and VdPA feeds.',
+        mobileCard2: '[04-05] HA STORAGE & ELT ORCHESTRATION',
+        mobileCard2Desc: 'PostgreSQL 16 Patroni cluster (failover < 30s), DuckDB, Parquet Zstd, Airflow & Polars.',
+        mobileCard3: '[06-07] DBT MODELING, DLP & CI/CD TESTS',
+        mobileCard3Desc: 'Medallion Architecture, Kimball Star Schema, PII cleaning, and blocking assertions.',
+        mobileCard4: '[08-OUT] MULTIMODAL AI, NLP & DECISION BI',
+        mobileCard4Desc: 'Power BI (16 DAX measures), Metabase, Streamlit, pgvector, and Scikit-learn.',
+        // Mobile nav links
+        mobileNav1: '[01] DATA LAB',
+        mobileNav2: '[02] SYSTEMS & PIPELINES',
+        mobileNav3: '[03] SIKAPAY ARCHITECTURE',
+        mobileNav4: '[04] AWARDS & PROFILE',
+        mobileNav5: '[05] CONTACT',
+        // Identity card modal
+        idCardStack: '[MAIN STACK]',
+        idCardDistinctions: '[AWARDS & EXPERIENCE]',
+        idCardStackContent: 'PostgreSQL 16 HA (Patroni) · SQL Server · DuckDB · Parquet Zstd · dbt · Apache Airflow · Polars · Python · Power BI (DAX) · Metabase · Docker · Linux',
+        idCardDistinctionsContent: '• Data Warehouse & Lakehouse Architectures — SikaPay WAEMU, Supply Chain DW & CFPB NLP<br/>• 2nd Place National (Togo) — Datatour 2026 (1.7M+ transactions)<br/>• 3rd Place National — Togo AI Lab Challenge (RGPH 8M+ residents & Power BI)<br/>• BSc AI & Big Data — École Nationale Polytechnique (ENP Lomé)',
+        idCardCvBtn: 'Request Full PDF CV →',
+        // Footer
+        footerRight: 'PERIWINKLE & ROYAL BLUE CHARTER · ARCHITECTURE LAB',
       }
     };
 
@@ -448,35 +606,33 @@
 
     function openIdentityCardModal() {
       if (!overlay || !dialogContent) return;
+      const t = i18nDict[currentLang];
       dialogContent.innerHTML = `
         <div class="mobile-dialog__header">
           <div>
             <span class="section-header__badge">TM//BILAKE</span>
             <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-top: 0.35rem;">Tchaa Mèwè Angelo BILAKE</h3>
-            <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--royal-dark); font-weight: 700;">Data Engineer &amp; Expert en Analytics · IA &amp; Big Data</p>
+            <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--royal-dark); font-weight: 700;">${currentLang === 'fr' ? 'Data Engineer &amp; Expert en Analytics · IA &amp; Big Data' : 'Data Engineer &amp; Analytics Specialist · AI &amp; Big Data'}</p>
           </div>
           <button type="button" class="mobile-dialog__close-x" id="id-close-x">X</button>
         </div>
         <div style="display: grid; gap: 0.65rem; font-size: 0.86rem; margin-bottom: 1.1rem;">
           <div style="background: var(--bg-subtle); border: 1.5px solid var(--text-ink); padding: 0.65rem;">
-            <strong style="color: var(--royal-dark); font-family: var(--font-mono);">[STACK PRINCIPALE]</strong><br />
-            PostgreSQL 16 HA (Patroni) · SQL Server · DuckDB · Parquet Zstd · dbt · Apache Airflow · Polars · Python · Power BI (DAX) · Metabase · Docker · Linux
+            <strong style="color: var(--royal-dark); font-family: var(--font-mono);">${t.idCardStack}</strong><br />
+            ${t.idCardStackContent}
           </div>
           <div style="background: var(--royal-pale); border: 1.5px solid var(--text-ink); padding: 0.65rem;">
-            <strong style="color: var(--royal-dark); font-family: var(--font-mono);">[DISTINCTIONS &amp; EXPÉRIENCE]</strong><br />
-            • Architectures Data Warehouse &amp; Lakehouse — SikaPay UEMOA, Supply Chain DW &amp; CFPB NLP<br />
-            • 2e Place Nationale au Togo — Datatour 2026 (1,7M+ transactions)<br />
-            • 3e Place Nationale — Togo AI Lab Challenge (RGPH 8M+ hab. &amp; Power BI)<br />
-            • Licence IA &amp; Big Data — École Nationale Polytechnique (ENP Lomé)
+            <strong style="color: var(--royal-dark); font-family: var(--font-mono);">${t.idCardDistinctions}</strong><br />
+            ${t.idCardDistinctionsContent}
           </div>
           <div style="background: var(--surface); border: 1.5px solid var(--text-ink); padding: 0.65rem; font-family: var(--font-mono); font-size: 0.76rem;">
-            Email : angelobtma@gmail.com · Tél/WhatsApp : +228 93 10 66 65<br />
+            Email : angelobtma@gmail.com · ${currentLang === 'fr' ? 'Tél/WhatsApp' : 'Phone/WhatsApp'} : +228 93 10 66 65<br />
             GitHub : github.com/AngeloEngineer
           </div>
         </div>
         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
-          <a href="mailto:angelobtma@gmail.com?subject=Demande%20de%20CV%20-%20Angelo%20BILAKE" class="detail__link-btn">Recevoir le CV PDF complet &rarr;</a>
-          <button type="button" class="detail__link-btn detail__link-btn--secondary" id="id-close-btn">${i18nDict[currentLang].closeModal}</button>
+          <a href="mailto:angelobtma@gmail.com?subject=${encodeURIComponent(currentLang === 'fr' ? 'Demande de CV - Angelo BILAKE' : 'CV Request - Angelo BILAKE')}" class="detail__link-btn">${t.idCardCvBtn}</a>
+          <button type="button" class="detail__link-btn detail__link-btn--secondary" id="id-close-btn">${t.closeModal}</button>
         </div>
       `;
       overlay.classList.add('open');
@@ -539,6 +695,7 @@
         btn.classList.toggle('active', btn.getAttribute('data-lang-option') === currentLang);
       });
 
+      // ---- Textes simples par ID ----
       const mapText = {
         'nav-subtitle-text': t.navSubtitle,
         'hero-status-text': t.heroStatus,
@@ -550,11 +707,13 @@
         'cta-primary-text': t.ctaPrimary,
         'cta-secondary-text': t.ctaSecondary,
         'cta-card-text': t.ctaCard,
+        // Data Lab
         'lab-kicker': t.labKicker,
         'lab-title': t.labTitle,
         'lab-subtitle': t.labSubtitle,
         'lab-desc': t.labDesc,
         'legend-header': t.legendHeader,
+        // Missions
         'missions-kicker': t.missionsKicker,
         'missions-title': t.missionsTitle,
         'missions-subtitle': t.missionsSubtitle,
@@ -562,7 +721,58 @@
         'filter-analytics': t.filterAnalytics,
         'filter-data': t.filterData,
         'filter-ai': t.filterAi,
-        'btn-submit-text': t.submitBtn
+        // Flagship
+        'flagship-kicker': t.flagshipKicker,
+        'flagship-subtitle': t.flagshipSubtitle,
+        'flagship-desc': t.flagshipDesc,
+        'flagship-proof-1': t.flagshipProof1,
+        'flagship-proof-2': t.flagshipProof2,
+        'flagship-proof-3': t.flagshipProof3,
+        'flagship-flow-title': t.flagshipFlowTitle,
+        'fp-step1-lbl': t.fpStep1Lbl,
+        'fp-step1-desc': t.fpStep1Desc,
+        'fp-step2-lbl': t.fpStep2Lbl,
+        'fp-step2-desc': t.fpStep2Desc,
+        'fp-step3-lbl': t.fpStep3Lbl,
+        'fp-step3-desc': t.fpStep3Desc,
+        'fp-step4-lbl': t.fpStep4Lbl,
+        'fp-step4-desc': t.fpStep4Desc,
+        'fp-step5-lbl': t.fpStep5Lbl,
+        'fp-step5-desc': t.fpStep5Desc,
+        // Hero board nodes
+        'hero-node-in-lbl': t.heroNodeInLbl,
+        'hero-node-gov-lbl': t.heroNodeGovLbl,
+        'hero-node-obs-lbl': t.heroNodeObsLbl,
+        'hero-node-out1-lbl': t.heroNodeOut1Lbl,
+        'hero-node-out2-lbl': t.heroNodeOut2Lbl,
+        'hero-node-out3-lbl': t.heroNodeOut3Lbl,
+        // Podiums
+        'podiums-kicker': t.podiumsKicker,
+        'podiums-title': t.podiumsTitle,
+        'podiums-subtitle': t.podiumsSubtitle,
+        'profile-school': t.profileSchool,
+        'profile-langs': t.profileLangs,
+        'profile-bio': t.profileBio,
+        'podium1-sub': t.podium1Sub,
+        'podium1-title': t.podium1Title,
+        'podium1-desc': t.podium1Desc,
+        'podium2-sub': t.podium2Sub,
+        'podium2-title': t.podium2Title,
+        'podium2-desc': t.podium2Desc,
+        'podium3-sub': t.podium3Sub,
+        'podium3-title': t.podium3Title,
+        'podium3-desc': t.podium3Desc,
+        'podium4-sub': t.podium4Sub,
+        'podium4-title': t.podium4Title,
+        'podium4-desc': t.podium4Desc,
+        // Contact
+        'contact-kicker': t.contactKicker,
+        'form-header-title': t.formHeaderTitle,
+        'lbl-name': t.lblName,
+        'lbl-email': t.lblEmail,
+        'lbl-subject': t.lblSubject,
+        'lbl-message': t.lblMessage,
+        'btn-submit-text': t.submitBtn,
       };
 
       Object.keys(mapText).forEach(id => {
@@ -570,15 +780,57 @@
         if (el) el.textContent = mapText[id];
       });
 
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
-      });
-
+      // ---- Éléments avec innerHTML (HTML entities) ----
       const contactTitle = document.getElementById('contact-title');
       if (contactTitle) contactTitle.innerHTML = t.contactTitle;
       const contactDesc = document.getElementById('contact-desc');
       if (contactDesc) contactDesc.textContent = t.contactDesc;
+
+      // ---- Flagship repo link ----
+      const flagshipRepoLink = document.getElementById('flagship-repo-link');
+      if (flagshipRepoLink) flagshipRepoLink.textContent = t.flagshipRepoLink;
+
+      // ---- Placeholders formulaire ----
+      const fieldPlaceholders = {
+        'name': t.placeholderName,
+        'email': t.placeholderEmail,
+        'subject': t.placeholderSubject,
+        'message': t.placeholderMessage,
+      };
+      Object.keys(fieldPlaceholders).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.placeholder = fieldPlaceholders[id];
+      });
+
+      // ---- Liens du tiroir mobile ----
+      const mobileLinks = document.querySelectorAll('.mobile-nav-drawer__link');
+      const mobileNavKeys = ['mobileNav1', 'mobileNav2', 'mobileNav3', 'mobileNav4', 'mobileNav5'];
+      mobileLinks.forEach((link, i) => {
+        if (mobileNavKeys[i]) link.textContent = t[mobileNavKeys[i]];
+      });
+
+      // ---- Cartes mobiles Data Lab ----
+      const mobileCards = document.querySelectorAll('.agentic-lab__mobile-flow .agent-mobile-card');
+      const mobileCardKeys = [
+        { strong: 'mobileCard1', p: 'mobileCard1Desc' },
+        { strong: 'mobileCard2', p: 'mobileCard2Desc' },
+        { strong: 'mobileCard3', p: 'mobileCard3Desc' },
+        { strong: 'mobileCard4', p: 'mobileCard4Desc' },
+      ];
+      mobileCards.forEach((card, i) => {
+        if (mobileCardKeys[i]) {
+          const strong = card.querySelector('strong');
+          const p = card.querySelector('p');
+          if (strong) strong.textContent = t[mobileCardKeys[i].strong];
+          if (p) p.textContent = t[mobileCardKeys[i].p];
+        }
+      });
+
+      // ---- data-i18n générique ----
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
 
       renderMissionsGrid();
       renderMissionDetail();
